@@ -1,0 +1,303 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tomcat-index
+  namespace: tomcat
+  annotations:
+    kubernetes.io/change-cause: first_version
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: tomcat
+      name: index
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  template:
+    metadata:
+      labels:
+        app: tomcat
+        name: index
+    spec:
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels:
+              app: tomcat
+      containers:
+      - image: ehddlf5709/tomindex:v1.0
+        name: tomcat-index-deploy
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - mountPath: "/opt/tomcat/webapps/ROOT/data"
+          name: html
+        resources:
+          limits:
+            cpu: 200m
+            memory: 250Mi
+          requests:
+            cpu: 200m
+            memory: 250Mi
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 20
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: pvc-tomcat
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tomcat-login
+  namespace: tomcat
+  annotations:
+    kubernetes.io/change-cause: first_version
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: tomcat
+      name: login
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  template:
+    metadata:
+      labels:
+        app: tomcat
+        name: login
+    spec:
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels:
+              app: tomcat
+      containers:
+      - image: ehddlf5709/tomlogin:v1.0
+        name: tomcat-login-deploy
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - mountPath: "/opt/tomcat/webapps/ROOT/data"
+          name: html
+        resources:
+          limits:
+            cpu: 200m
+            memory: 250Mi
+          requests:
+            cpu: 200m
+            memory: 250Mi
+        livenessProbe:
+          httpGet:
+            path: /login.jsp
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 20
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: pvc-tomcat
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tomcat-join
+  namespace: tomcat
+  annotations:
+    kubernetes.io/change-cause: first_version
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: tomcat
+      name: join
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  template:
+    metadata:
+      labels:
+        app: tomcat
+        name: join
+    spec:
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels:
+              app: tomcat
+      containers:
+      - image: ehddlf5709/tomjoin:v1.0
+        name: tomcat-join-deploy
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - mountPath: "/opt/tomcat/webapps/ROOT/data"
+          name: html
+        resources:
+          limits:
+            cpu: 200m
+            memory: 250Mi
+          requests:
+            cpu: 200m
+            memory: 250Mi
+        livenessProbe:
+          httpGet:
+            path: /join.jsp
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 20
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: pvc-tomcat
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tomcat-menu
+  namespace: tomcat
+  annotations:
+    kubernetes.io/change-cause: first_version
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: tomcat
+      name: menu
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  template:
+    metadata:
+      labels:
+        app: tomcat
+        name: menu
+    spec:
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels:
+              app: tomcat
+      containers:
+      - image: ehddlf5709/tommenu:v1.0
+        name: tomcat-menu-deploy
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - mountPath: "/opt/tomcat/webapps/ROOT/data"
+          name: html
+        resources:
+          limits:
+            cpu: 200m
+            memory: 250Mi
+          requests:
+            cpu: 200m
+            memory: 250Mi
+        livenessProbe:
+          httpGet:
+            path: /menu.jsp
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 20
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: pvc-tomcat
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tomcat-mypage
+  namespace: tomcat
+  annotations:
+    kubernetes.io/change-cause: first_version
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: tomcat
+      name: mypage
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  template:
+    metadata:
+      labels:
+        app: tomcat
+        name: mypage
+    spec:
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels:
+              app: tomcat
+      containers:
+      - image: ehddlf5709/tommypage:v1.0
+        name: tomcat-mypage-deploy
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - mountPath: "/opt/tomcat/webapps/ROOT/data"
+          name: html
+        resources:
+          limits:
+            cpu: 200m
+            memory: 250Mi
+          requests:
+            cpu: 200m
+            memory: 250Mi
+        livenessProbe:
+          httpGet:
+            path: /mypage.jsp
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 20
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: pvc-tomcat
+          
+
+

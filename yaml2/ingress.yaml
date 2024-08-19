@@ -1,0 +1,45 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: "www.ehddlf5709.shop"
+    http: 
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: index-service
+            port:
+              number: 80
+      - path: /login.jsp
+        pathType: Prefix
+        backend:
+          service:
+            name: login-service
+            port:
+              number: 80
+      - path: /join.jsp
+        pathType: Prefix
+        backend:
+          service:
+            name: join-service
+            port:
+              number: 80
+      - path: /contents.jsp
+        pathType: Prefix
+        backend:
+          service:
+            name: menu-service
+            port:
+              number: 80
+      - path: /mypage.jsp
+        pathType: Prefix
+        backend:
+          service:
+            name: mypage-service
+            port:
+              number: 80
