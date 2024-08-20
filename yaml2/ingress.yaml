@@ -12,7 +12,8 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-  - http: 
+  - host: ehddlf5709.shop
+    http: 
       paths:
       - path: /
         pathType: Prefix
