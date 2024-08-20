@@ -26,13 +26,14 @@ spec:
         podAntiAffinity: 
           preferredDuringSchedulingIgnoredDuringExecution:
           - weight: 50
-          - labelSelector:
-              matchExpressions:
-              - key: nginx
-                operator: In
-                values:
-                - nginx
-            topologyKey: topology.kubernetes.io/zone
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: nginx
+                  operator: In
+                  values:
+                  - nginx
+              topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: kubernetes.io/hostname
@@ -94,10 +95,11 @@ spec:
         name: login
     spec:
       affinity:
-          podAntiAffinity: 
-            preferredDuringSchedulingIgnoredDuringExecution:
-            - weight: 50
-            - labelSelector:
+        podAntiAffinity: 
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 50
+            podAffinityTerm:
+              labelSelector:
                 matchExpressions:
                 - key: nginx
                   operator: In
@@ -166,10 +168,11 @@ spec:
         name: join
     spec:
       affinity:
-          podAntiAffinity: 
-            preferredDuringSchedulingIgnoredDuringExecution:
-            - weight: 50
-            - labelSelector:
+        podAntiAffinity: 
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 50
+            podAffinityTerm:
+              labelSelector:
                 matchExpressions:
                 - key: nginx
                   operator: In
@@ -238,10 +241,11 @@ spec:
         name: contents
     spec:
       affinity:
-          podAntiAffinity: 
-            preferredDuringSchedulingIgnoredDuringExecution:
-            - weight: 50
-            - labelSelector:
+        podAntiAffinity: 
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 50
+            podAffinityTerm:
+              labelSelector:
                 matchExpressions:
                 - key: nginx
                   operator: In
@@ -310,10 +314,11 @@ spec:
         name: mypage
     spec:
       affinity:
-          podAntiAffinity: 
-            preferredDuringSchedulingIgnoredDuringExecution:
-            - weight: 50
-            - labelSelector:
+        podAntiAffinity: 
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 50
+            podAffinityTerm:
+              labelSelector:
                 matchExpressions:
                 - key: nginx
                   operator: In
