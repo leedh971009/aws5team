@@ -9,7 +9,7 @@ spec:
   accessModes:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Recycle
-  storageClassName: HF-EFS-SC
+  storageClassName: hf-efs-sc
   csi:
     driver: efs.csi.aws.com
     volumeHandle: fs-03bd337a316af1cce
@@ -26,7 +26,7 @@ spec:
   accessModes:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Recycle
-  storageClassName: HF-EFS-SC
+  storageClassName: hf-efs-sc
   csi:
     driver: efs.csi.aws.com
     volumeHandle: fs-03bd337a316af1cce
