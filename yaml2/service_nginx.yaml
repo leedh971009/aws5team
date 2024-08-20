@@ -52,14 +52,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: menu-service
+  name: contents-service
   namespace: nginx
 spec:
   type: NodePort
   clusterIP: 10.100.0.204
   selector:
     app: nginx
-    name: menu
+    name: contents
   ports:
   - protocol: TCP
     port: 80

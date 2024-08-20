@@ -49,14 +49,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: tomcat-menu-service
+  name: tomcat-contents-service
   namespace: tomcat
 spec:
   type: ClusterIP
   clusterIP: 10.100.0.214
   selector:
     app: tomcat
-    name: menu
+    name: contents
   ports:
   - protocol: TCP
     port: 8080
