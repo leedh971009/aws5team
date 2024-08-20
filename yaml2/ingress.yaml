@@ -12,7 +12,7 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-  - http: 
+  - http:
       paths:
       - path: /
         pathType: Prefix
