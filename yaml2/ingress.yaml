@@ -12,40 +12,40 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-      http: 
-        paths:
-        - path: /
-          pathType: Prefix
-          backend:
-            service:
-              name: index-service
-              port:
-                number: 80
-        - path: /login.jsp
-          pathType: Prefix
-          backend:
-            service:
-              name: login-service
-              port:
-                number: 80
-        - path: /join.jsp
-          pathType: Prefix
-          backend:
-            service:
-              name: join-service
-              port:
-                number: 80
-        - path: /contents.jsp
-          pathType: Prefix
-          backend:
-            service:
-              name: contents-service
-              port:
-                number: 80
-        - path: /mypage.jsp
-          pathType: Prefix
-          backend:
-            service:
-              name: mypage-service
+  - http: 
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: index-service
+            port:
+              number: 80
+      - path: /login.jsp
+        pathType: Prefix
+        backend:
+          service:
+            name: login-service
+            port:
+              number: 80
+      - path: /join.jsp
+        pathType: Prefix
+        backend:
+          service:
+            name: join-service
+            port:
+              number: 80
+      - path: /contents.jsp
+        pathType: Prefix
+        backend:
+          service:
+            name: contents-service
+            port:
+              number: 80
+      - path: /mypage.jsp
+        pathType: Prefix
+        backend:
+          service:
+            name: mypage-service
               port:
                 number: 80
