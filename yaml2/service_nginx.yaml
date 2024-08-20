@@ -4,7 +4,7 @@ metadata:
   name: index-service
   namespace: nginx
 spec:
-  type: LoadBalancer
+  type: NodePort
   clusterIP: 172.20.100.101
   selector:
     app: nginx
@@ -21,7 +21,7 @@ metadata:
   name: login-service
   namespace: nginx
 spec:
-  type: LoadBalancer
+  type: NodePort
   clusterIP: 172.20.100.102
   selector:
     app: nginx
@@ -38,7 +38,7 @@ metadata:
   name: join-service
   namespace: nginx
 spec:
-  type: LoadBalancer
+  type: NodePort
   clusterIP: 172.20.100.103
   selector:
     app: nginx
@@ -55,7 +55,7 @@ metadata:
   name: contents-service
   namespace: nginx
 spec:
-  type: LoadBalancer
+  type: NodePort
   clusterIP: 172.20.100.104
   selector:
     app: nginx
@@ -72,7 +72,7 @@ metadata:
   name: mypage-service
   namespace: nginx
 spec:
-  type: LoadBalancer
+  type: NodePort
   clusterIP: 172.20.100.105
   selector:
     app: nginx
