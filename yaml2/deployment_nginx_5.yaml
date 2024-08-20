@@ -276,7 +276,7 @@ spec:
             memory: 250Mi
         livenessProbe:
           httpGet:
-            path: /menu.jsp
+            path: /contents.jsp
             port: 80
           initialDelaySeconds: 15
           periodSeconds: 20

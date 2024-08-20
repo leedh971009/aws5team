@@ -260,7 +260,7 @@ spec:
               app: tomcat
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-contents:v1.0
-        name: tomcat-menu-deploy
+        name: tomcat-contents-deploy
         ports:
         - containerPort: 8080
         volumeMounts:
@@ -275,7 +275,7 @@ spec:
             memory: 250Mi
         livenessProbe:
           httpGet:
-            path: /menu.jsp
+            path: /contents.jsp
             port: 8080
           initialDelaySeconds: 15
           periodSeconds: 20
@@ -359,5 +359,3 @@ spec:
           persistentVolumeClaim:
             claimName: pvc-tomcat
           
-
-
