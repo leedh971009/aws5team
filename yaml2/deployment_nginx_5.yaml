@@ -22,6 +22,16 @@ spec:
         app: nginx
         name: index
     spec:
+      affinity:
+        podAntiAffinity: 
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: nginx
+                operator: In
+                values:
+                - nginx
+            topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: kubernetes.io/hostname
@@ -30,7 +40,7 @@ spec:
             matchLabels:
               app: nginx
       containers:
-      - image: chae45/nginx-index:v1.0
+      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-index:v1.0
         name: index
         ports:
         - containerPort: 80
@@ -82,6 +92,16 @@ spec:
         app: nginx
         name: login
     spec:
+      affinity:
+          podAntiAffinity: 
+            preferredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                - key: nginx
+                  operator: In
+                  values:
+                  - nginx
+              topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: kubernetes.io/hostname
@@ -90,7 +110,7 @@ spec:
             matchLabels:
               app: nginx
       containers:
-      - image: chae45/nginx-login:v1.0
+      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-login:v1.0
         name: login
         ports:
         - containerPort: 80
@@ -143,6 +163,16 @@ spec:
         app: nginx
         name: join
     spec:
+      affinity:
+          podAntiAffinity: 
+            preferredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                - key: nginx
+                  operator: In
+                  values:
+                  - nginx
+              topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: kubernetes.io/hostname
@@ -151,7 +181,7 @@ spec:
             matchLabels:
               app: nginx
       containers:
-      - image: chae45/nginx-join:v1.0
+      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-join:v1.0
         name: join
         ports:
         - containerPort: 80
@@ -183,7 +213,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deploy-menu
+  name: deploy-contents
   namespace: nginx
   annotations:
     kubernetes.io/change-cause: first_version
@@ -192,7 +222,7 @@ spec:
   selector:
     matchLabels:
       app: nginx
-      name: menu
+      name: contents
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -202,8 +232,18 @@ spec:
     metadata:
       labels:
         app: nginx
-        name: menu
+        name: contents
     spec:
+      affinity:
+          podAntiAffinity: 
+            preferredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                - key: nginx
+                  operator: In
+                  values:
+                  - nginx
+              topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: kubernetes.io/hostname
@@ -212,7 +252,7 @@ spec:
             matchLabels:
               app: nginx
       containers:
-      - image: chae45/nginx-menu:v1.0
+      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-contents:v1.0
         name: menu
         ports:
         - containerPort: 80
@@ -265,6 +305,16 @@ spec:
         app: nginx
         name: mypage
     spec:
+      affinity:
+          podAntiAffinity: 
+            preferredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                - key: nginx
+                  operator: In
+                  values:
+                  - nginx
+              topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: kubernetes.io/hostname
@@ -273,7 +323,7 @@ spec:
             matchLabels:
               app: nginx
       containers:
-      - image: chae45/nginx-mypage:v1.0
+      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-mypage:v1.0
         name: mypage
         ports:
         - containerPort: 80

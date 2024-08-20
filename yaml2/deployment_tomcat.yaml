@@ -22,6 +22,16 @@ spec:
         app: tomcat
         name: index
     spec:
+      affinity:
+          podAntiAffinity: 
+            preferredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                - key: nginx
+                  operator: In
+                  values:
+                  - nginx
+              topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: kubernetes.io/hostname
@@ -30,7 +40,7 @@ spec:
             matchLabels:
               app: tomcat
       containers:
-      - image: ehddlf5709/tomindex:v1.0
+      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-index:v1.0
         name: tomcat-index-deploy
         ports:
         - containerPort: 8080
@@ -82,6 +92,16 @@ spec:
         app: tomcat
         name: login
     spec:
+      affinity:
+          podAntiAffinity: 
+            preferredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                - key: nginx
+                  operator: In
+                  values:
+                  - nginx
+              topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: kubernetes.io/hostname
@@ -90,7 +110,7 @@ spec:
             matchLabels:
               app: tomcat
       containers:
-      - image: ehddlf5709/tomlogin:v1.0
+      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-login:v1.0
         name: tomcat-login-deploy
         ports:
         - containerPort: 8080
@@ -142,6 +162,16 @@ spec:
         app: tomcat
         name: join
     spec:
+      affinity:
+          podAntiAffinity: 
+            preferredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                - key: nginx
+                  operator: In
+                  values:
+                  - nginx
+              topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: kubernetes.io/hostname
@@ -150,7 +180,7 @@ spec:
             matchLabels:
               app: tomcat
       containers:
-      - image: ehddlf5709/tomjoin:v1.0
+      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-join:v1.0
         name: tomcat-join-deploy
         ports:
         - containerPort: 8080
@@ -182,7 +212,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: tomcat-menu
+  name: tomcat-contents
   namespace: tomcat
   annotations:
     kubernetes.io/change-cause: first_version
@@ -191,7 +221,7 @@ spec:
   selector:
     matchLabels:
       app: tomcat
-      name: menu
+      name: contents
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -201,8 +231,18 @@ spec:
     metadata:
       labels:
         app: tomcat
-        name: menu
+        name: contents
     spec:
+      affinity:
+          podAntiAffinity: 
+            preferredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                - key: nginx
+                  operator: In
+                  values:
+                  - nginx
+              topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: kubernetes.io/hostname
@@ -211,7 +251,7 @@ spec:
             matchLabels:
               app: tomcat
       containers:
-      - image: ehddlf5709/tommenu:v1.0
+      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-contents:v1.0
         name: tomcat-menu-deploy
         ports:
         - containerPort: 8080
@@ -263,6 +303,16 @@ spec:
         app: tomcat
         name: mypage
     spec:
+      affinity:
+          podAntiAffinity: 
+            preferredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                - key: nginx
+                  operator: In
+                  values:
+                  - nginx
+              topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: kubernetes.io/hostname
@@ -271,7 +321,7 @@ spec:
             matchLabels:
               app: tomcat
       containers:
-      - image: ehddlf5709/tommypage:v1.0
+      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-mypage:v1.0
         name: tomcat-mypage-deploy
         ports:
         - containerPort: 8080
