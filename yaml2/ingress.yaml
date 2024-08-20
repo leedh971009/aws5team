@@ -2,10 +2,15 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/certificate-arn: <your-certificate-arn>
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
+    alb.ingress.kubernetes.io/ssl-policy: ELBSecurityPolicy-2016-08
 spec:
-  ingressClassName: nginx
   rules:
-  - host: "www.ehddlf5709.shop"
     http: 
       paths:
       - path: /
@@ -33,7 +38,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: menu-service
+            name: contents-service
             port:
               number: 80
       - path: /mypage.jsp
