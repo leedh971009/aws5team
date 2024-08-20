@@ -29,10 +29,10 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
-                - key: nginx
+                - key: app
                   operator: In
                   values:
-                  - nginx
+                  - tomcat
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
@@ -101,10 +101,10 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
-                - key: nginx
+                - key: app
                   operator: In
                   values:
-                  - nginx
+                  - tomcat
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
@@ -173,10 +173,10 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
-                - key: nginx
+                - key: app
                   operator: In
                   values:
-                  - nginx
+                  - tomcat
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
@@ -246,10 +246,10 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
-                - key: nginx
+                - key: app
                   operator: In
                   values:
-                  - nginx
+                  - tomcat
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
@@ -318,10 +318,10 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
-                - key: nginx
+                - key: app
                   operator: In
                   values:
-                  - nginx
+                  - tomcat
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
