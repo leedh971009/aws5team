@@ -10,6 +10,7 @@ metadata:
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
     alb.ingress.kubernetes.io/ssl-policy: ELBSecurityPolicy-2016-08
 spec:
+  ingressClassName: alb
   rules:
     - host: ehddlf5709.shop
       http: 
