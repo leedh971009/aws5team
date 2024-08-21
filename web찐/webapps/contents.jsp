@@ -11,7 +11,7 @@
     <meta name="keywords" content="Anime, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="img/data/movie.png">
+    <link rel="icon" href="data/img/data/movie.png">
     <title>Contents</title>
 
     <!-- Google Font -->
@@ -20,14 +20,14 @@
     rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/plyr.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="data/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="data/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="data/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="data/css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="data/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="data/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="data/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="data/css/style.css" type="text/css">
 </head>
 
 <body>
@@ -151,7 +151,7 @@
 				       <div class="row">
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="img/contents/begin_again.jpg">
+                                    <div class="product__item__pic set-bg" data-setbg="data/img/contents/begin_again.jpg">
 				                        <div class="ep"><%= price1 %>₩</div>
 				                        <div class="comment"><i class="fa fa-comments"></i><%= COMMENT1 %></div>
 				                        <div class="view"><i class="fa fa-eye"></i> <%= VIEW1 %></div>
@@ -217,7 +217,7 @@
 				        
 				            <div class="col-lg-4 col-md-6 col-sm-6">
 				                <div class="product__item">
-				                    <div class="product__item__pic set-bg" data-setbg="img/contents/showman.jpg">
+				                    <div class="product__item__pic set-bg" data-setbg="data/img/contents/showman.jpg">
 				                        <div class="ep"><%= price1 %>₩</div>
 				                        <div class="comment"><i class="fa fa-comments"></i><%= COMMENT1 %></div>
 				                        <div class="view"><i class="fa fa-eye"></i> <%= VIEW1 %></div>
@@ -275,7 +275,7 @@
 				        
 				            <div class="col-lg-4 col-md-6 col-sm-6">
 				                <div class="product__item">
-				                    <div class="product__item__pic set-bg" data-setbg="img/contents/up.jpg">
+				                    <div class="product__item__pic set-bg" data-setbg="data/img/contents/up.jpg">
 				                        <div class="ep"><%= price1 %>₩</div>
 				                        <div class="comment"><i class="fa fa-comments"></i><%= COMMENT1 %></div>
 				                        <div class="view"><i class="fa fa-eye"></i> <%= VIEW1 %></div>
@@ -334,7 +334,7 @@
 				        
 				            <div class="col-lg-4 col-md-6 col-sm-6">
 				                <div class="product__item">
-				                    <div class="product__item__pic set-bg" data-setbg="img/contents/ironman.jpg">
+				                    <div class="product__item__pic set-bg" data-setbg="data/img/contents/ironman.jpg">
 				                        <div class="ep"><%= price1 %>₩</div>
 				                        <div class="comment"><i class="fa fa-comments"></i><%= COMMENT1 %></div>
 				                        <div class="view"><i class="fa fa-eye"></i> <%= VIEW1 %></div>
@@ -390,7 +390,7 @@
 				        
 				            <div class="col-lg-4 col-md-6 col-sm-6">
 				                <div class="product__item">
-				                    <div class="product__item__pic set-bg" data-setbg="img/contents/baseball.jpg">
+				                    <div class="product__item__pic set-bg" data-setbg="data/img/contents/baseball.jpg">
 				                        <div class="ep"><%= price1 %>₩</div>
 				                        <div class="comment"><i class="fa fa-comments"></i><%= COMMENT1 %></div>
 				                        <div class="view"><i class="fa fa-eye"></i> <%= VIEW1 %></div>
@@ -447,7 +447,7 @@
 				        
 				            <div class="col-lg-4 col-md-6 col-sm-6">
 				                <div class="product__item">
-				                    <div class="product__item__pic set-bg" data-setbg="img/contents/Transferring_Love.jpeg">
+				                    <div class="product__item__pic set-bg" data-setbg="data/img/contents/Transferring_Love.jpeg">
 				                        <div class="ep"><%= price1 %>₩</div>
 				                        <div class="comment"><i class="fa fa-comments"></i><%= COMMENT1 %></div>
 				                        <div class="view"><i class="fa fa-eye"></i> <%= VIEW1 %></div>
@@ -503,7 +503,7 @@
 				        
 				            <div class="col-lg-4 col-md-6 col-sm-6">
 				                <div class="product__item">
-				                    <div class="product__item__pic set-bg" data-setbg="img/contents/spiderman.jpg">
+				                    <div class="product__item__pic set-bg" data-setbg="data/img/contents/spiderman.jpg">
 				                        <div class="ep"><%= price1 %>₩</div>
 				                        <div class="comment"><i class="fa fa-comments"></i><%= COMMENT1 %></div>
 				                        <div class="view"><i class="fa fa-eye"></i> <%= VIEW1 %></div>
@@ -560,7 +560,7 @@
 				        
 				            <div class="col-lg-4 col-md-6 col-sm-6">
 				                <div class="product__item">
-				                    <div class="product__item__pic set-bg" data-setbg="img/contents/kingsman.jpg">
+				                    <div class="product__item__pic set-bg" data-setbg="data/img/contents/kingsman.jpg">
 				                        <div class="ep"><%= price1 %>₩</div>
 				                        <div class="comment"><i class="fa fa-comments"></i><%= COMMENT1 %></div>
 				                        <div class="view"><i class="fa fa-eye"></i> <%= VIEW1 %></div>
@@ -616,7 +616,7 @@
 				        
 				            <div class="col-lg-4 col-md-6 col-sm-6">
 				                <div class="product__item">
-				                    <div class="product__item__pic set-bg" data-setbg="img/contents/tears.jpg">
+				                    <div class="product__item__pic set-bg" data-setbg="data/img/contents/tears.jpg">
 				                        <div class="ep"><%= price1 %>₩</div>
 				                        <div class="comment"><i class="fa fa-comments"></i><%= COMMENT1 %></div>
 				                        <div class="view"><i class="fa fa-eye"></i> <%= VIEW1 %></div>
@@ -665,31 +665,31 @@
                             </ul>
                             <div class="filter__gallery">
                                 <div class="product__sidebar__view__item set-bg mix day years"
-                                data-setbg="img/sidebar/begin-again_1.jpg">
+                                data-setbg="data/img/sidebar/begin-again_1.jpg">
                                 <div class="ep">1 / 9</div>
                                 <div class="view"><i class="fa fa-eye"></i> 100000</div>
                                 <h5><a href="#">Begin Again</a></h5>
                             </div>
                             <div class="product__sidebar__view__item set-bg mix month week"
-                            data-setbg="img/sidebar/ironman.jpg">
+                            data-setbg="data/img/sidebar/ironman.jpg">
                             <div class="ep">4 / 9</div>
                             <div class="view"><i class="fa fa-eye"></i> 9700</div>
                             <h5><a href="#">IRONMAN3</a></h5>
                         </div>
                         <div class="product__sidebar__view__item set-bg mix week years"
-                        data-setbg="img/sidebar/baseball.jpg">
+                        data-setbg="data/img/sidebar/baseball.jpg">
                         <div class="ep">5 / 9</div>
                         <div class="view"><i class="fa fa-eye"></i> 9141</div>
                         <h5><a href="#">THE STRONGEST BASEBALL</a></h5>
                     </div>
                     <div class="product__sidebar__view__item set-bg mix years month"
-                    data-setbg="img/sidebar/tears_1.jpg">
+                    data-setbg="data/img/sidebar/tears_1.jpg">
                     <div class="ep">9 / 9</div>
                     <div class="view"><i class="fa fa-eye"></i> 8941</div>
                     <h5><a href="#">Queen of Tears</a></h5>
                 </div>
                 <div class="product__sidebar__view__item set-bg mix day"
-                data-setbg="img/sidebar/spider_1.jpg">
+                data-setbg="data/img/sidebar/spider_1.jpg">
                 <div class="ep">7 / 9</div>
                 <div class="view"><i class="fa fa-eye"></i> 8923</div>
                 <h5><a href="#">SPIDERMAN</a></h5>
@@ -702,7 +702,7 @@
         </div>
         <div class="product__sidebar__comment__item">
             <div class="product__sidebar__comment__item__pic">
-                <img src="img/sidebar/dead.jpg" alt="">
+                <img src="data/img/sidebar/dead.jpg" alt="">
                 
             </div>
             <div class="product__sidebar__comment__item__text">
@@ -716,7 +716,7 @@
         </div>
         <div class="product__sidebar__comment__item">
             <div class="product__sidebar__comment__item__pic">
-                <img src="img/sidebar/arcane2.jpg" alt="">
+                <img src="data/img/sidebar/arcane2.jpg" alt="">
             </div>
             <div class="product__sidebar__comment__item__text">
                 <ul>
@@ -729,7 +729,7 @@
         </div>
         <div class="product__sidebar__comment__item">
             <div class="product__sidebar__comment__item__pic">
-                <img src="img/sidebar/nogain.jpg" alt="">
+                <img src="data/img/sidebar/nogain.jpg" alt="">
             </div>
             <div class="product__sidebar__comment__item__text">
                 <ul>
@@ -742,7 +742,7 @@
         </div>
         <div class="product__sidebar__comment__item">
             <div class="product__sidebar__comment__item__pic">
-                <img src="img/sidebar/seo.jpg" alt="">
+                <img src="data/img/sidebar/seo.jpg" alt="">
             </div>
             <div class="product__sidebar__comment__item__text">
                 <ul>
@@ -770,7 +770,7 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="footer__logo">
-                    <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                    <a href="./index.html"><img src="data/img/logo.png" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -805,14 +805,14 @@
 <!-- Search model end -->
 
 <!-- Js Plugins -->
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/player.js"></script>
-<script src="js/jquery.nice-select.min.js"></script>
-<script src="js/mixitup.min.js"></script>
-<script src="js/jquery.slicknav.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/main.js"></script>
+<script src="data/js/jquery-3.3.1.min.js"></script>
+<script src="data/js/bootstrap.min.js"></script>
+<script src="data/js/player.js"></script>
+<script src="data/js/jquery.nice-select.min.js"></script>
+<script src="data/js/mixitup.min.js"></script>
+<script src="data/js/jquery.slicknav.js"></script>
+<script src="data/js/owl.carousel.min.js"></script>
+<script src="data/js/main.js"></script>
 
 </body>
 
