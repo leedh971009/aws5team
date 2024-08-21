@@ -29,25 +29,25 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
-                - key: app
+                - key: nginx
                   operator: In
                   values:
                   - nginx
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: topology.kubernetes.io/zone
+          topologyKey: kubernetes.io/hostname
           whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
               app: nginx
       containers:
-      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-index:v1.0
+      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-index:v2.0
         name: index
         ports:
         - containerPort: 80
         volumeMounts:
-        - mountPath: "/usr/share/nginx/html"
+        - mountPath: "/usr/share/nginx/html/data"
           name: html
         resources:
           limits:
@@ -101,25 +101,25 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
-                - key: app
+                - key: nginx
                   operator: In
                   values:
                   - nginx
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: topology.kubernetes.io/zone
+          topologyKey: kubernetes.io/hostname
           whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
               app: nginx
       containers:
-      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-login:v1.0
+      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-login:v2.0
         name: login
         ports:
         - containerPort: 80
         volumeMounts:
-        - mountPath: "/usr/share/nginx/html"
+        - mountPath: "/usr/share/nginx/html/data"
           name: html
         resources:
           limits:
@@ -174,25 +174,25 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
-                - key: app
+                - key: nginx
                   operator: In
                   values:
                   - nginx
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: topology.kubernetes.io/zone
+          topologyKey: kubernetes.io/hostname
           whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
               app: nginx
       containers:
-      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-join:v1.0
+      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-join:v2.0
         name: join
         ports:
         - containerPort: 80
         volumeMounts:
-        - mountPath: "/usr/share/nginx/html"
+        - mountPath: "/usr/share/nginx/html/data"
           name: html
         resources:
           limits:
@@ -247,25 +247,25 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
-                - key: app
+                - key: nginx
                   operator: In
                   values:
                   - nginx
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: topology.kubernetes.io/zone
+          topologyKey: kubernetes.io/hostname
           whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
               app: nginx
       containers:
-      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-contents:v1.0
-        name: menu
+      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-contents:v2.0
+        name: contents
         ports:
         - containerPort: 80
         volumeMounts:
-        - mountPath: "/usr/share/nginx/html"
+        - mountPath: "/usr/share/nginx/html/data"
           name: html
         resources:
           limits:
@@ -320,25 +320,25 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
-                - key: app
+                - key: nginx
                   operator: In
                   values:
                   - nginx
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: topology.kubernetes.io/zone
+          topologyKey: kubernetes.io/hostname
           whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
               app: nginx
       containers:
-      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-mypage:v1.0
+      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-mypage:v2.0
         name: mypage
         ports:
         - containerPort: 80
         volumeMounts:
-        - mountPath: "/usr/share/nginx/html"
+        - mountPath: "/usr/share/nginx/html/data"
           name: html
         resources:
           limits:
