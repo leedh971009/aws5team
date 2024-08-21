@@ -61,8 +61,8 @@ spec:
             path: /
             port: 8080
           initialDelaySeconds: 15
-          periodSeconds: 20
-          timeoutSeconds: 1
+          periodSeconds: 60
+          timeoutSeconds: 60
           successThreshold: 1
           failureThreshold: 3
       volumes:
@@ -133,8 +133,8 @@ spec:
             path: /login.jsp
             port: 8080
           initialDelaySeconds: 15
-          periodSeconds: 20
-          timeoutSeconds: 1
+          periodSeconds: 60
+          timeoutSeconds: 60
           successThreshold: 1
           failureThreshold: 3
       volumes:
@@ -205,8 +205,8 @@ spec:
             path: /join.jsp
             port: 8080
           initialDelaySeconds: 15
-          periodSeconds: 20
-          timeoutSeconds: 1
+          periodSeconds: 60
+          timeoutSeconds: 60
           successThreshold: 1
           failureThreshold: 3
       volumes:
@@ -278,8 +278,8 @@ spec:
             path: /contents.jsp
             port: 8080
           initialDelaySeconds: 15
-          periodSeconds: 20
-          timeoutSeconds: 1
+          periodSeconds: 60
+          timeoutSeconds: 60
           successThreshold: 1
           failureThreshold: 3
       volumes:
@@ -350,8 +350,8 @@ spec:
             path: /mypage.jsp
             port: 8080
           initialDelaySeconds: 15
-          periodSeconds: 20
-          timeoutSeconds: 1
+          periodSeconds: 60
+          timeoutSeconds: 60
           successThreshold: 1
           failureThreshold: 3
       volumes:
