@@ -29,20 +29,20 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
-                - key: app
+                - key: nginx
                   operator: In
                   values:
-                  - tomcat
+                  - nginx
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: topology.kubernetes.io/zone
+          topologyKey: kubernetes.io/hostname
           whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
               app: tomcat
       containers:
-      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-index:v1.0
+      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-index:v2.0
         name: tomcat-index-deploy
         ports:
         - containerPort: 8080
@@ -61,8 +61,8 @@ spec:
             path: /
             port: 8080
           initialDelaySeconds: 15
-          periodSeconds: 60
-          timeoutSeconds: 60
+          periodSeconds: 20
+          timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
       volumes:
@@ -101,14 +101,14 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
-                - key: app
+                - key: nginx
                   operator: In
                   values:
-                  - tomcat
+                  - nginx
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: topology.kubernetes.io/zone
+          topologyKey: kubernetes.io/hostname
           whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
@@ -133,8 +133,8 @@ spec:
             path: /login.jsp
             port: 8080
           initialDelaySeconds: 15
-          periodSeconds: 60
-          timeoutSeconds: 60
+          periodSeconds: 20
+          timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
       volumes:
@@ -173,14 +173,14 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
-                - key: app
+                - key: nginx
                   operator: In
                   values:
-                  - tomcat
+                  - nginx
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: topology.kubernetes.io/zone
+          topologyKey: kubernetes.io/hostname
           whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
@@ -205,8 +205,8 @@ spec:
             path: /join.jsp
             port: 8080
           initialDelaySeconds: 15
-          periodSeconds: 60
-          timeoutSeconds: 60
+          periodSeconds: 20
+          timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
       volumes:
@@ -246,21 +246,21 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
-                - key: app
+                - key: nginx
                   operator: In
                   values:
-                  - tomcat
+                  - nginx
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: topology.kubernetes.io/zone
+          topologyKey: kubernetes.io/hostname
           whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
               app: tomcat
       containers:
-      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-contents:v1.0
-        name: tomcat-contents-deploy
+      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-contents:v2.0
+        name: tomcat-menu-deploy
         ports:
         - containerPort: 8080
         volumeMounts:
@@ -275,11 +275,11 @@ spec:
             memory: 250Mi
         livenessProbe:
           httpGet:
-            path: /contents.jsp
+            path: /menu.jsp
             port: 8080
           initialDelaySeconds: 15
-          periodSeconds: 60
-          timeoutSeconds: 60
+          periodSeconds: 20
+          timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
       volumes:
@@ -318,14 +318,14 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
-                - key: app
+                - key: nginx
                   operator: In
                   values:
-                  - tomcat
+                  - nginx
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: topology.kubernetes.io/zone
+          topologyKey: kubernetes.io/hostname
           whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
@@ -350,8 +350,8 @@ spec:
             path: /mypage.jsp
             port: 8080
           initialDelaySeconds: 15
-          periodSeconds: 60
-          timeoutSeconds: 60
+          periodSeconds: 20
+          timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
       volumes:
@@ -359,3 +359,5 @@ spec:
           persistentVolumeClaim:
             claimName: pvc-tomcat
           
+
+
