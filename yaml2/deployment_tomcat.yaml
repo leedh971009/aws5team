@@ -358,6 +358,3 @@ spec:
         - name: html
           persistentVolumeClaim:
             claimName: pvc-tomcat
-          
-
-
