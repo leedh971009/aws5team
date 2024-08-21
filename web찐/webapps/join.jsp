@@ -11,7 +11,7 @@
     <meta name="keywords" content="Anime, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="img/data/join.png">
+    <link rel="icon" href="data/img/data/join.png">
     <title>Join</title>
 
     <!-- Google Font -->
@@ -20,14 +20,14 @@
     rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/plyr.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="data/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="data/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="data/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="data/css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="data/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="data/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="data/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="data/css/style.css" type="text/css">
 </head>
 
 <body>
@@ -130,7 +130,7 @@
 <!-- Header End -->
 
 <!-- Normal Breadcrumb Begin -->
-<section class="normal-breadcrumb set-bg" data-setbg="img/ott.png">
+<section class="normal-breadcrumb set-bg" data-setbg="data/img/ott.png">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
@@ -176,7 +176,7 @@
             </div>
             <div class="col-lg-6">
                  <div class="login__register">
-                    <div class="product__item__pic set-bg" data-setbg="img/contents/yumi.jpg">
+                    <div class="product__item__pic set-bg" data-setbg="data/img/contents/yumi.jpg">
                     </div>
                 </div>
             </div>
@@ -193,7 +193,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="footer__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        <a href="./index.html"><img src="data/img/logo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -226,14 +226,14 @@
     <!-- Search model end -->
 
     <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/player.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/mixitup.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="data/js/jquery-3.3.1.min.js"></script>
+    <script src="data/js/bootstrap.min.js"></script>
+    <script src="data/js/player.js"></script>
+    <script src="data/js/jquery.nice-select.min.js"></script>
+    <script src="data/js/mixitup.min.js"></script>
+    <script src="data/js/jquery.slicknav.js"></script>
+    <script src="data/js/owl.carousel.min.js"></script>
+    <script src="data/js/main.js"></script>
 
 </body>
 
