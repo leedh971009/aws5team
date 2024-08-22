@@ -1,0 +1,53 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress
+  namespace: nginx
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:331090843244:certificate/33b4c8c9-215f-4504-af0c-5e9a3ce0a7d9
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
+    alb.ingress.kubernetes.io/ssl-policy: ELBSecurityPolicy-2016-08
+spec:
+  ingressClassName: alb
+  rules:
+  - host: kiminji.store
+    http: 
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: index-service
+            port:
+              number: 80
+      - path: /login.jsp
+        pathType: Prefix
+        backend:
+          service:
+            name: login-service
+            port:
+              number: 80
+      - path: /join.jsp
+        pathType: Prefix
+        backend:
+          service:
+            name: join-service
+            port:
+              number: 80
+      - path: /contents.jsp
+        pathType: Prefix
+        backend:
+          service:
+            name: contents-service
+            port:
+              number: 80
+      - path: /mypage.jsp
+        pathType: Prefix
+        backend:
+          service:
+            name: mypage-service
+            port:
+              number: 80
