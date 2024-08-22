@@ -42,7 +42,7 @@ spec:
             matchLabels:
               app: tomcat
       containers:
-      - image: 381492076830.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-index:v4.0
+      - image: 381492076830.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-index:v5.0
         name: tomcat-index-deploy
         ports:
         - containerPort: 8080
@@ -107,7 +107,7 @@ spec:
             matchLabels:
               app: tomcat
       containers:
-      - image: 381492076830.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-login:v4.0
+      - image: 381492076830.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-login:v5.0
         name: tomcat-login-deploy
         ports:
         - containerPort: 8080
@@ -172,7 +172,7 @@ spec:
             matchLabels:
               app: tomcat
       containers:
-      - image: 381492076830.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-join:v4.0
+      - image: 381492076830.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-join:v5.0
         name: tomcat-join-deploy
         ports:
         - containerPort: 8080
@@ -238,7 +238,7 @@ spec:
             matchLabels:
               app: tomcat
       containers:
-      - image: 381492076830.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-contents:v4.0
+      - image: 381492076830.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-contents:v5.0
         name: tomcat-contents-deploy
         ports:
         - containerPort: 8080
@@ -304,7 +304,7 @@ spec:
             matchLabels:
               app: tomcat
       containers:
-      - image: 381492076830.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-mypage:v4.0
+      - image: 381492076830.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-mypage:v5.0
         name: tomcat-mypage-deploy
         ports:
         - containerPort: 8080
