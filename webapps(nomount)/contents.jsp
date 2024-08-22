@@ -129,7 +129,7 @@
 				
 				    String jdbcDriver = "com.mysql.jdbc.Driver";
 				    String jdbcUrl = "jdbc:mysql://database-1.cn482mka8n93.ap-northeast-2.rds.amazonaws.com:3306/test";
-				    String dbUser = "root";
+				    String dbUser = "hf";
 				    String dbPass = "1234";
 
 				    try {
