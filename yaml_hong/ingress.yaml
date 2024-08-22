@@ -13,7 +13,7 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-  - host: powernvp.store
+  - host: powernvp.shop
     http: 
       paths:
       - path: /
