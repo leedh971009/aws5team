@@ -51,7 +51,7 @@ spec:
             name: mypage-service
             port:
               number: 80
-  - host: *.ehddlf5709.shop
+  - host: '*.ehddlf5709.shop'
     http: 
       paths:
       - path: /
