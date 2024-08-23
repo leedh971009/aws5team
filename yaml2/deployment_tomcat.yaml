@@ -46,6 +46,9 @@ spec:
         name: tomcat-index-deploy
         ports:
         - containerPort: 8080
+        volumeMounts:
+        - mountPath: "/opt/tomcat/webapps/ROOT/data"
+          name: html
         resources:
           limits:
             cpu: 200m
@@ -62,6 +65,10 @@ spec:
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: pvc-tomcat
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -111,6 +118,9 @@ spec:
         name: tomcat-login-deploy
         ports:
         - containerPort: 8080
+        volumeMounts:
+        - mountPath: "/opt/tomcat/webapps/ROOT/data"
+          name: html
         resources:
           limits:
             cpu: 200m
@@ -127,6 +137,10 @@ spec:
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: pvc-tomcat
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -176,6 +190,9 @@ spec:
         name: tomcat-join-deploy
         ports:
         - containerPort: 8080
+        volumeMounts:
+        - mountPath: "/opt/tomcat/webapps/ROOT/data"
+          name: html
         resources:
           limits:
             cpu: 200m
@@ -192,6 +209,11 @@ spec:
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: pvc-tomcat
+
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -241,6 +263,9 @@ spec:
         name: tomcat-contents-deploy
         ports:
         - containerPort: 8080
+        volumeMounts:
+        - mountPath: "/opt/tomcat/webapps/ROOT/data"
+          name: html
         resources:
           limits:
             cpu: 200m
@@ -257,6 +282,10 @@ spec:
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: pvc-tomcat
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -306,6 +335,9 @@ spec:
         name: tomcat-mypage-deploy
         ports:
         - containerPort: 8080
+        volumeMounts:
+        - mountPath: "/opt/tomcat/webapps/ROOT/data"
+          name: html
         resources:
           limits:
             cpu: 200m
@@ -322,6 +354,10 @@ spec:
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: pvc-tomcat
           
 
 
