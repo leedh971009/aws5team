@@ -10,11 +10,9 @@ spec:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   storageClassName: hf-efs-sc
-  nfs:
-    path: /hf
-    server: fs-03bd337a316af1cce.efs.ap-northeast-2.amazonaws.com
-  mountOptions:
-    - nfsvers=4.1
+  csi:
+    driver: efs.csi.aws.com
+    volumeHandle: fs-03bd337a316af1cce
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -28,8 +26,6 @@ spec:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   storageClassName: hf-efs-sc
-  nfs:
-    path: /hf
-    server: fs-03bd337a316af1cce.efs.ap-northeast-2.amazonaws.com
-  mountOptions:
-    - nfsvers=4.1 
+  csi:
+    driver: efs.csi.aws.com
+    volumeHandle: fs-03bd337a316af1cce
