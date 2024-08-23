@@ -260,7 +260,7 @@ spec:
             matchLabels:
               app: nginx
       containers:
-      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-contents:v2.0
+      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-contents:v3.0
         name: contents
         ports:
         - containerPort: 80
