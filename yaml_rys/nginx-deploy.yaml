@@ -29,14 +29,14 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
-                - key: app
+                - key: nginx
                   operator: In
                   values:
                   - nginx
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: topology.kubernetes.io/zone
+          topologyKey: kubernetes.io/hostname
           whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
@@ -46,6 +46,9 @@ spec:
         name: index
         ports:
         - containerPort: 80
+        volumeMounts:
+        - mountPath: "/usr/share/nginx/html/data"
+          name: html
         resources:
           limits:
             cpu: 200m
@@ -62,6 +65,10 @@ spec:
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: pvc-nginx
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -94,14 +101,14 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
-                - key: app
+                - key: nginx
                   operator: In
                   values:
                   - nginx
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: topology.kubernetes.io/zone
+          topologyKey: kubernetes.io/hostname
           whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
@@ -111,6 +118,9 @@ spec:
         name: login
         ports:
         - containerPort: 80
+        volumeMounts:
+        - mountPath: "/usr/share/nginx/html/data"
+          name: html
         resources:
           limits:
             cpu: 200m
@@ -127,6 +137,10 @@ spec:
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: pvc-nginx
 
 ---
 apiVersion: apps/v1
@@ -160,14 +174,14 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
-                - key: app
+                - key: nginx
                   operator: In
                   values:
                   - nginx
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: topology.kubernetes.io/zone
+          topologyKey: kubernetes.io/hostname
           whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
@@ -177,6 +191,9 @@ spec:
         name: join
         ports:
         - containerPort: 80
+        volumeMounts:
+        - mountPath: "/usr/share/nginx/html/data"
+          name: html
         resources:
           limits:
             cpu: 200m
@@ -193,6 +210,10 @@ spec:
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: pvc-nginx
 
 ---
 apiVersion: apps/v1
@@ -226,23 +247,26 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
-                - key: app
+                - key: nginx
                   operator: In
                   values:
                   - nginx
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: topology.kubernetes.io/zone
+          topologyKey: kubernetes.io/hostname
           whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
               app: nginx
       containers:
       - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-contents:v3.0
-        name: menu
+        name: contents
         ports:
         - containerPort: 80
+        volumeMounts:
+        - mountPath: "/usr/share/nginx/html/data"
+          name: html
         resources:
           limits:
             cpu: 200m
@@ -259,6 +283,10 @@ spec:
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: pvc-nginx
 
 ---
 apiVersion: apps/v1
@@ -292,14 +320,14 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
-                - key: app
+                - key: nginx
                   operator: In
                   values:
                   - nginx
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: topology.kubernetes.io/zone
+          topologyKey: kubernetes.io/hostname
           whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
@@ -309,6 +337,9 @@ spec:
         name: mypage
         ports:
         - containerPort: 80
+        volumeMounts:
+        - mountPath: "/usr/share/nginx/html/data"
+          name: html
         resources:
           limits:
             cpu: 200m
@@ -325,3 +356,7 @@ spec:
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: pvc-nginx
