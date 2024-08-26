@@ -45,7 +45,7 @@
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String jdbcUrl = "jdbc:mysql://database-1.cn482mka8n93.ap-northeast-2.rds.amazonaws.com:3306/test";
+            String jdbcUrl = "jdbc:mysql://hf-db.cn482mka8n93.ap-northeast-2.rds.amazonaws.com:3306/test";
             String dbUser = "hf";
             String dbPass = "1234";
 
