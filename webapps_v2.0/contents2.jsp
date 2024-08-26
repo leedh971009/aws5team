@@ -193,12 +193,9 @@
 				    Connection conn2 = null;
 				    Statement stmt2 = null;
 				    ResultSet rs2 = null;
-				    PreparedStatement updatestmt2 = null;
+				    PreparedStatement updateStmt2 = null;
 
-					String jdbcDriver = "com.mysql.jdbc.Driver";
-				    String jdbcUrl = "jdbc:mysql://hf-db.cn482mka8n93.ap-northeast-2.rds.amazonaws.com:3306/test"; 
-				    String dbUser = "hf";
-				    String dbPass = "1234";
+			
 				
 				    // Define JDBC connection parameters
 				
@@ -271,11 +268,7 @@
 				    ResultSet rs3 = null;
 				    PreparedStatement updatestmt3 = null;
 
-					String jdbcDriver = "com.mysql.jdbc.Driver";
-				    String jdbcUrl = "jdbc:mysql://hf-db.cn482mka8n93.ap-northeast-2.rds.amazonaws.com:3306/test"; 
-				    String dbUser = "hf";
-				    String dbPass = "1234";
-				
+								
 
 				    try {
 				        Class.forName(jdbcDriver);
@@ -340,11 +333,7 @@
 				    ResultSet rs4 = null;
 				    PreparedStatement updatestmt4 = null;
 
-					String jdbcDriver = "com.mysql.jdbc.Driver";
-				    String jdbcUrl = "jdbc:mysql://hf-db.cn482mka8n93.ap-northeast-2.rds.amazonaws.com:3306/test"; 
-				    String dbUser = "hf";
-				    String dbPass = "1234";
-				
+					
 
 				    try {
 				        Class.forName(jdbcDriver);
@@ -405,12 +394,7 @@
 				    Statement stmt5 = null;
 				    ResultSet rs5 = null;
 				    PreparedStatement updatestmt5 = null;
-
-					String jdbcDriver = "com.mysql.jdbc.Driver";
-				    String jdbcUrl = "jdbc:mysql://hf-db.cn482mka8n93.ap-northeast-2.rds.amazonaws.com:3306/test"; 
-				    String dbUser = "hf";
-				    String dbPass = "1234";
-				
+		
 
 				    try {
 				        Class.forName(jdbcDriver);
@@ -472,11 +456,7 @@
 				    Statement stmt6 = null;
 				    ResultSet rs6 = null;
 				    PreparedStatement updatestmt6 = null;
-
-					String jdbcDriver = "com.mysql.jdbc.Driver";
-				    String jdbcUrl = "jdbc:mysql://hf-db.cn482mka8n93.ap-northeast-2.rds.amazonaws.com:3306/test"; 
-				    String dbUser = "hf";
-				    String dbPass = "1234";
+			
 				
 
 				    try {
@@ -538,11 +518,6 @@
 				    Statement stmt7 = null;
 				    ResultSet rs7 = null;
 				    PreparedStatement updatestmt7 = null;
-
-					String jdbcDriver = "com.mysql.jdbc.Driver";
-				    String jdbcUrl = "jdbc:mysql://hf-db.cn482mka8n93.ap-northeast-2.rds.amazonaws.com:3306/test"; 
-				    String dbUser = "hf";
-				    String dbPass = "1234";
 				
 
 				    try {
@@ -605,12 +580,7 @@
 				    Statement stmt8 = null;
 				    ResultSet rs8 = null;
 				    PreparedStatement updatestmt8 = null;
-
-					String jdbcDriver = "com.mysql.jdbc.Driver";
-				    String jdbcUrl = "jdbc:mysql://hf-db.cn482mka8n93.ap-northeast-2.rds.amazonaws.com:3306/test"; 
-				    String dbUser = "hf";
-				    String dbPass = "1234";
-				
+									
 
 				    try {
 				        Class.forName(jdbcDriver);
@@ -671,11 +641,7 @@
 				    Statement stmt9 = null;
 				    ResultSet rs9 = null;
 				    PreparedStatement updatestmt9 = null;
-
-					String jdbcDriver = "com.mysql.jdbc.Driver";
-				    String jdbcUrl = "jdbc:mysql://hf-db.cn482mka8n93.ap-northeast-2.rds.amazonaws.com:3306/test"; 
-				    String dbUser = "hf";
-				    String dbPass = "1234";
+			
 				
 
 				    try {
