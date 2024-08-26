@@ -125,7 +125,7 @@
 				    Connection conn1 = null;
 				    Statement stmt1 = null;
 				    ResultSet rs1 = null;
-				    PreparedStatement updateStmt1 = null;
+				    PreparedStatement updatestmt1 = null;
 				
 				    String jdbcDriver = "com.mysql.jdbc.Driver";
 				    String jdbcUrl = "jdbc:mysql://database-1.cn482mka8n93.ap-northeast-2.rds.amazonaws.com:3306/test";
@@ -138,6 +138,11 @@
 				        stmt1 = conn1.createStatement();
 				        String sql1 = "SELECT * FROM menu WHERE id=1;";
 				        rs1 = stmt1.executeQuery(sql1);
+
+					String sql2 = "UPDATE menu SET PRICE=13000 WHERE id=1;";
+                       			updatestmt1 = conn1.prepareStatement(sql2);
+                            
+                        		int rowsAffected = updatestmt1.executeUpdate(sql2);
 				
 				        if (rs1.next()) {
 				            String name1 = rs1.getString("name");
@@ -204,6 +209,11 @@
 				        stmt2 = conn2.createStatement();
 				        String sql1 = "SELECT * FROM menu WHERE id=2;";
 				        rs2 = stmt2.executeQuery(sql1);
+
+					String sql2 = "UPDATE menu SET PRICE=13000 WHERE id=2;";
+					updatestmt2 = conn2.prepareStatement(sql2);
+						
+					int rowsAffected = updatestmt2.executeUpdate();
 				
 				        // Display menu item details
 				        if (rs2.next()) {
@@ -263,6 +273,11 @@
 				        stmt3 = conn3.createStatement();
 				        String sql1 = "SELECT * FROM menu WHERE id=3;";
 				        rs3 = stmt3.executeQuery(sql1);
+
+					String sql2 = "UPDATE menu SET PRICE=9000 WHERE id=3;";
+					updatestmt3 = conn3.prepareStatement(sql2);
+						
+					int rowsAffected = updatestmt3.executeUpdate();
 				
 				        if (rs3.next()) {
 				            String name1 = rs3.getString("name");
@@ -322,6 +337,11 @@
 				        stmt4 = conn4.createStatement();
 				        String sql1 = "SELECT * FROM menu WHERE id=4;";
 				        rs4 = stmt4.executeQuery(sql1);
+
+					String sql2 = "UPDATE menu SET PRICE=9700 WHERE id=4;";
+					updatestmt4 = conn4.prepareStatement(sql2);
+					            
+					int rowsAffected = updatestmt4.executeUpdate();
 				
 				        if (rs4.next()) {
 				            String name1 = rs4.getString("name");
@@ -378,6 +398,11 @@
 				        stmt5 = conn5.createStatement();
 				        String sql1 = "SELECT * FROM menu WHERE id=5;";
 				        rs5 = stmt5.executeQuery(sql1);
+
+					String sql2 = "UPDATE menu SET PRICE=5000 WHERE id=5;";
+					updatestmt5 = conn5.prepareStatement(sql2);
+					            
+					int rowsAffected = updatestmt5.executeUpdate();
 				
 				        if (rs5.next()) {
 				            String name1 = rs5.getString("name");
@@ -435,6 +460,11 @@
 				        stmt6 = conn6.createStatement();
 				        String sql1 = "SELECT * FROM menu WHERE id=6;";
 				        rs6 = stmt6.executeQuery(sql1);
+
+					String sql2 = "UPDATE menu SET PRICE=8000 WHERE id=6;";
+					updatestmt6 = conn6.prepareStatement(sql2);
+						
+					int rowsAffected = updatestmt6.executeUpdate();
 				
 				        if (rs6.next()) {
 				            String name1 = rs6.getString("name");
@@ -491,6 +521,11 @@
 				        stmt7 = conn7.createStatement();
 				        String sql1 = "SELECT * FROM menu WHERE id=7;";
 				        rs7 = stmt7.executeQuery(sql1);
+
+					String sql2 = "UPDATE menu SET PRICE=11000 WHERE id=7;";
+					updatestmt7 = conn7.prepareStatement(sql2);
+						
+					int rowsAffected = updatestmt7.executeUpdate();
 				
 				        if (rs7.next()) {
 				            String name1 = rs7.getString("name");
@@ -548,6 +583,11 @@
 				        stmt8 = conn8.createStatement();
 				        String sql1 = "SELECT * FROM menu WHERE id=8;";
 				        rs8 = stmt8.executeQuery(sql1);
+
+					String sql2 = "UPDATE menu SET PRICE=13000 WHERE id=8;";
+					updatestmt8 = conn8.prepareStatement(sql2);
+						
+					int rowsAffected = updatestmt8.executeUpdate();
 				
 				        if (rs8.next()) {
 				            String name1 = rs8.getString("name");
@@ -604,6 +644,11 @@
 				        stmt9 = conn9.createStatement();
 				        String sql1 = "SELECT * FROM menu WHERE id=9;";
 				        rs9 = stmt9.executeQuery(sql1);
+
+					String sql2 = "UPDATE menu SET PRICE=16000 WHERE id=9;";
+					updatestmt9 = conn9.prepareStatement(sql2);
+						
+					int rowsAffected = updatestmt9.executeUpdate();
 				
 				        if (rs9.next()) {
 				            String name1 = rs9.getString("name");
