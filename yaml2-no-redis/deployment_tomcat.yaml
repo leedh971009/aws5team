@@ -271,8 +271,8 @@ spec:
             cpu: 200m
             memory: 250Mi
           requests:
-            cpu: 100m
-            memory: 150Mi
+            cpu: 200m
+            memory: 250Mi
         livenessProbe:
           httpGet:
             path: /contents.jsp
