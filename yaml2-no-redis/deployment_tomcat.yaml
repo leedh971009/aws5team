@@ -259,7 +259,7 @@ spec:
             matchLabels:
               app: tomcat
       containers:
-      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-contents:v10.0
+      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-contents2:v4.0
         name: tomcat-contents-deploy
         ports:
         - containerPort: 8080
