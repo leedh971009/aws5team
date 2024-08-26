@@ -139,10 +139,10 @@
 				        String sql1 = "SELECT * FROM menu WHERE id=1;";
 				        rs1 = stmt1.executeQuery(sql1);
 
-						String sql2 = "UPDATE menu SET PRICE=6500 WHERE id=1;";
-                        updateStmt1 = conn1.prepareStatement(sql2);
+					String sql2 = "UPDATE menu SET PRICE=6500 WHERE id=1;";
+                       			updatestmt1 = conn1.prepareStatement(sql2);
                             
-                        int rowsAffected = updatestmt1.executeUpdate(sql2);
+                        		int rowsAffected = updatestmt1.executeUpdate(sql2);
 				
 				        if (rs1.next()) {
 				            String name1 = rs1.getString("name");
@@ -153,10 +153,10 @@
 				            String VIEW1 = rs1.getString("VIEW");
 					%>
 				        
-				       <div class="row">
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/contents/begin_again.jpg">
+				        <div class="row">
+                            		<div class="col-lg-4 col-md-6 col-sm-6">
+                                        <div class="product__item">
+                                        <div class="product__item__pic set-bg" data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/contents/begin_again.jpg">
 				                        <div class="ep"><%= price1 %>₩</div>
 				                        <div class="comment"><i class="fa fa-comments"></i><%= COMMENT1 %></div>
 				                        <div class="view"><i class="fa fa-eye"></i> <%= VIEW1 %></div>
@@ -212,10 +212,10 @@
 				        String sql1 = "SELECT * FROM menu WHERE id=2;";
 				        rs2 = stmt2.executeQuery(sql1);
 
-						String sql2 = "UPDATE menu SET PRICE=6500 WHERE id=2;";
-						updatestmt2 = conn2.prepareStatement(sql2);
+					String sql2 = "UPDATE menu SET PRICE=6500 WHERE id=2;";
+					updatestmt2 = conn2.prepareStatement(sql2);
 						
-						int rowsAffected = updatestmt2.executeUpdate();
+					int rowsAffected = updatestmt2.executeUpdate();
 				
 				        // Display menu item details
 				        if (rs2.next()) {
