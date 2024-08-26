@@ -11,7 +11,7 @@
     <meta name="keywords" content="Anime, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="data/img/data/movie.png">
+    <link rel="icon" href="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/data/movie.png">
     <title>Contents</title>
 
     <!-- Google Font -->
@@ -129,7 +129,7 @@
 				
 				    String jdbcDriver = "com.mysql.jdbc.Driver";
 				    String jdbcUrl = "jdbc:mysql://database-1.cn482mka8n93.ap-northeast-2.rds.amazonaws.com:3306/test";
-				    String dbUser = "root";
+				    String dbUser = "hf";
 				    String dbPass = "1234";
 
 				    try {
@@ -138,6 +138,11 @@
 				        stmt1 = conn1.createStatement();
 				        String sql1 = "SELECT * FROM menu WHERE id=1;";
 				        rs1 = stmt1.executeQuery(sql1);
+
+						String sql2 = "UPDATE menu SET PRICE=65000 WHERE id=1;";
+                        updateStmt1 = conn1.prepareStatement(sql2);
+                            
+                        int rowsAffected = updateStmt1.executeUpdate(sql2);
 				
 				        if (rs1.next()) {
 				            String name1 = rs1.getString("name");
@@ -151,7 +156,7 @@
 				       <div class="row">
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="data/img/contents/begin_again.jpg">
+                                    <div class="product__item__pic set-bg" data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/contents/begin_again.jpg">
 				                        <div class="ep"><%= price1 %>₩</div>
 				                        <div class="comment"><i class="fa fa-comments"></i><%= COMMENT1 %></div>
 				                        <div class="view"><i class="fa fa-eye"></i> <%= VIEW1 %></div>
@@ -204,6 +209,11 @@
 				        stmt2 = conn2.createStatement();
 				        String sql1 = "SELECT * FROM menu WHERE id=2;";
 				        rs2 = stmt2.executeQuery(sql1);
+
+						String sql2 = "UPDATE menu SET PRICE=65000 WHERE id=2;";
+						updateStmt2 = conn2.prepareStatement(sql2);
+						
+						int rowsAffected = updateStmt2.executeUpdate();
 				
 				        // Display menu item details
 				        if (rs2.next()) {
@@ -217,7 +227,7 @@
 				        
 				            <div class="col-lg-4 col-md-6 col-sm-6">
 				                <div class="product__item">
-				                    <div class="product__item__pic set-bg" data-setbg="data/img/contents/showman.jpg">
+				                    <div class="product__item__pic set-bg" data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/contents/showman.jpg">
 				                        <div class="ep"><%= price1 %>₩</div>
 				                        <div class="comment"><i class="fa fa-comments"></i><%= COMMENT1 %></div>
 				                        <div class="view"><i class="fa fa-eye"></i> <%= VIEW1 %></div>
@@ -263,6 +273,11 @@
 				        stmt3 = conn3.createStatement();
 				        String sql1 = "SELECT * FROM menu WHERE id=3;";
 				        rs3 = stmt3.executeQuery(sql1);
+
+						String sql2 = "UPDATE menu SET PRICE=4500 WHERE id=3;";
+						updatestmt3 = conn3.prepareStatement(sql2);
+						
+						int rowsAffected = updatestmt3.executeUpdate();
 				
 				        if (rs3.next()) {
 				            String name1 = rs3.getString("name");
@@ -275,7 +290,7 @@
 				        
 				            <div class="col-lg-4 col-md-6 col-sm-6">
 				                <div class="product__item">
-				                    <div class="product__item__pic set-bg" data-setbg="data/img/contents/up.jpg">
+				                    <div class="product__item__pic set-bg" data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/contents/up.jpg">
 				                        <div class="ep"><%= price1 %>₩</div>
 				                        <div class="comment"><i class="fa fa-comments"></i><%= COMMENT1 %></div>
 				                        <div class="view"><i class="fa fa-eye"></i> <%= VIEW1 %></div>
@@ -322,6 +337,11 @@
 				        stmt4 = conn4.createStatement();
 				        String sql1 = "SELECT * FROM menu WHERE id=4;";
 				        rs4 = stmt4.executeQuery(sql1);
+
+						String sql2 = "UPDATE menu SET PRICE=4850 WHERE id=4;";
+					    updatestmt4 = conn4.prepareStatement(sql2);
+					            
+					    int rowsAffected = updatestmt4.executeUpdate();
 				
 				        if (rs4.next()) {
 				            String name1 = rs4.getString("name");
@@ -334,7 +354,7 @@
 				        
 				            <div class="col-lg-4 col-md-6 col-sm-6">
 				                <div class="product__item">
-				                    <div class="product__item__pic set-bg" data-setbg="data/img/contents/ironman.jpg">
+				                    <div class="product__item__pic set-bg" data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/contents/ironman.jpg">
 				                        <div class="ep"><%= price1 %>₩</div>
 				                        <div class="comment"><i class="fa fa-comments"></i><%= COMMENT1 %></div>
 				                        <div class="view"><i class="fa fa-eye"></i> <%= VIEW1 %></div>
@@ -378,6 +398,11 @@
 				        stmt5 = conn5.createStatement();
 				        String sql1 = "SELECT * FROM menu WHERE id=5;";
 				        rs5 = stmt5.executeQuery(sql1);
+
+						String sql2 = "UPDATE menu SET PRICE=2500 WHERE id=5;";
+					    updatestmt5 = conn5.prepareStatement(sql2);
+					            
+					    int rowsAffected = updatestmt5.executeUpdate();
 				
 				        if (rs5.next()) {
 				            String name1 = rs5.getString("name");
@@ -390,7 +415,7 @@
 				        
 				            <div class="col-lg-4 col-md-6 col-sm-6">
 				                <div class="product__item">
-				                    <div class="product__item__pic set-bg" data-setbg="data/img/contents/baseball.jpg">
+				                    <div class="product__item__pic set-bg" data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/contents/baseball.jpg">
 				                        <div class="ep"><%= price1 %>₩</div>
 				                        <div class="comment"><i class="fa fa-comments"></i><%= COMMENT1 %></div>
 				                        <div class="view"><i class="fa fa-eye"></i> <%= VIEW1 %></div>
@@ -435,6 +460,11 @@
 				        stmt6 = conn6.createStatement();
 				        String sql1 = "SELECT * FROM menu WHERE id=6;";
 				        rs6 = stmt6.executeQuery(sql1);
+
+						String sql2 = "UPDATE menu SET PRICE=4000 WHERE id=6;";
+						updatestmt6 = conn6.prepareStatement(sql2);
+						
+						int rowsAffected = updatestmt6.executeUpdate();
 				
 				        if (rs6.next()) {
 				            String name1 = rs6.getString("name");
@@ -447,7 +477,7 @@
 				        
 				            <div class="col-lg-4 col-md-6 col-sm-6">
 				                <div class="product__item">
-				                    <div class="product__item__pic set-bg" data-setbg="data/img/contents/Transferring_Love.jpeg">
+				                    <div class="product__item__pic set-bg" data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/contents/Transferring_Love.jpeg">
 				                        <div class="ep"><%= price1 %>₩</div>
 				                        <div class="comment"><i class="fa fa-comments"></i><%= COMMENT1 %></div>
 				                        <div class="view"><i class="fa fa-eye"></i> <%= VIEW1 %></div>
@@ -491,6 +521,11 @@
 				        stmt7 = conn7.createStatement();
 				        String sql1 = "SELECT * FROM menu WHERE id=7;";
 				        rs7 = stmt7.executeQuery(sql1);
+
+						String sql2 = "UPDATE menu SET PRICE=5500 WHERE id=7;";
+						updatestmt7 = conn7.prepareStatement(sql2);
+						
+						int rowsAffected = updatestmt7.executeUpdate();
 				
 				        if (rs7.next()) {
 				            String name1 = rs7.getString("name");
@@ -503,7 +538,7 @@
 				        
 				            <div class="col-lg-4 col-md-6 col-sm-6">
 				                <div class="product__item">
-				                    <div class="product__item__pic set-bg" data-setbg="data/img/contents/spiderman.jpg">
+				                    <div class="product__item__pic set-bg" data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/contents/spiderman.jpg">
 				                        <div class="ep"><%= price1 %>₩</div>
 				                        <div class="comment"><i class="fa fa-comments"></i><%= COMMENT1 %></div>
 				                        <div class="view"><i class="fa fa-eye"></i> <%= VIEW1 %></div>
@@ -548,6 +583,11 @@
 				        stmt8 = conn8.createStatement();
 				        String sql1 = "SELECT * FROM menu WHERE id=8;";
 				        rs8 = stmt8.executeQuery(sql1);
+
+						String sql2 = "UPDATE menu SET PRICE=6500 WHERE id=8;";
+						updatestmt8 = conn8.prepareStatement(sql2);
+						
+						int rowsAffected = updatestmt8.executeUpdate();
 				
 				        if (rs8.next()) {
 				            String name1 = rs8.getString("name");
@@ -560,7 +600,7 @@
 				        
 				            <div class="col-lg-4 col-md-6 col-sm-6">
 				                <div class="product__item">
-				                    <div class="product__item__pic set-bg" data-setbg="data/img/contents/kingsman.jpg">
+				                    <div class="product__item__pic set-bg" data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/contents/kingsman.jpg">
 				                        <div class="ep"><%= price1 %>₩</div>
 				                        <div class="comment"><i class="fa fa-comments"></i><%= COMMENT1 %></div>
 				                        <div class="view"><i class="fa fa-eye"></i> <%= VIEW1 %></div>
@@ -604,6 +644,13 @@
 				        stmt9 = conn9.createStatement();
 				        String sql1 = "SELECT * FROM menu WHERE id=9;";
 				        rs9 = stmt9.executeQuery(sql1);
+
+						String sql2 = "UPDATE menu SET PRICE=8000 WHERE id=9;";
+						updatestmt9 = conn9.prepareStatement(sql2);
+						
+						int rowsAffected = updatestmt9.executeUpdate();
+
+						
 				
 				        if (rs9.next()) {
 				            String name1 = rs9.getString("name");
@@ -616,7 +663,7 @@
 				        
 				            <div class="col-lg-4 col-md-6 col-sm-6">
 				                <div class="product__item">
-				                    <div class="product__item__pic set-bg" data-setbg="data/img/contents/tears.jpg">
+				                    <div class="product__item__pic set-bg" data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/contents/tears.jpg">
 				                        <div class="ep"><%= price1 %>₩</div>
 				                        <div class="comment"><i class="fa fa-comments"></i><%= COMMENT1 %></div>
 				                        <div class="view"><i class="fa fa-eye"></i> <%= VIEW1 %></div>
@@ -665,31 +712,31 @@
                             </ul>
                             <div class="filter__gallery">
                                 <div class="product__sidebar__view__item set-bg mix day years"
-                                data-setbg="data/img/sidebar/begin-again_1.jpg">
+                                data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/sidebar/begin-again_1.jpg">
                                 <div class="ep">6500₩</div>
                                 <div class="view"><i class="fa fa-eye"></i> 10000</div>
                                 <h5><a href="#">Begin Again</a></h5>
                             </div>
                             <div class="product__sidebar__view__item set-bg mix month week"
-                            data-setbg="data/img/sidebar/ironman.jpg">
+                            data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/sidebar/ironman.jpg">
                             <div class="ep">4850₩</div>
                             <div class="view"><i class="fa fa-eye"></i> 9700</div>
                             <h5><a href="#">IRONMAN3</a></h5>
                         </div>
                         <div class="product__sidebar__view__item set-bg mix week years"
-                        data-setbg="data/img/sidebar/baseball.jpg">
+                        data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/sidebar/baseball.jpg">
                         <div class="ep">2500₩</div>
                         <div class="view"><i class="fa fa-eye"></i> 9141</div>
                         <h5><a href="#">THE STRONGEST BASEBALL</a></h5>
                     </div>
                     <div class="product__sidebar__view__item set-bg mix years month"
-                    data-setbg="data/img/sidebar/tears_1.jpg">
+                    data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/sidebar/tears_1.jpg">
                     <div class="ep">8000₩</div>
                     <div class="view"><i class="fa fa-eye"></i> 8941</div>
                     <h5><a href="#">Queen of Tears</a></h5>
                 </div>
                 <div class="product__sidebar__view__item set-bg mix day"
-                data-setbg="data/img/sidebar/spider_1.jpg">
+                data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/sidebar/spider_1.jpg">
                 <div class="ep">5500₩</div>
                 <div class="view"><i class="fa fa-eye"></i> 8923</div>
                 <h5><a href="#">SPIDERMAN</a></h5>
@@ -702,7 +749,7 @@
         </div>
         <div class="product__sidebar__comment__item">
             <div class="product__sidebar__comment__item__pic">
-                <img src="data/img/sidebar/dead.jpg" alt="">
+                <img src="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/sidebar/dead.jpg" alt="">
                 
             </div>
             <div class="product__sidebar__comment__item__text">
@@ -716,7 +763,7 @@
         </div>
         <div class="product__sidebar__comment__item">
             <div class="product__sidebar__comment__item__pic">
-                <img src="data/img/sidebar/arcane2.jpg" alt="">
+                <img src="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/sidebar/arcane2.jpg" alt="">
             </div>
             <div class="product__sidebar__comment__item__text">
                 <ul>
@@ -729,7 +776,7 @@
         </div>
         <div class="product__sidebar__comment__item">
             <div class="product__sidebar__comment__item__pic">
-                <img src="data/img/sidebar/nogain.jpg" alt="">
+                <img src="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/sidebar/nogain.jpg" alt="">
             </div>
             <div class="product__sidebar__comment__item__text">
                 <ul>
@@ -742,7 +789,7 @@
         </div>
         <div class="product__sidebar__comment__item">
             <div class="product__sidebar__comment__item__pic">
-                <img src="data/img/sidebar/seo.jpg" alt="">
+                <img src="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/sidebar/seo.jpg" alt="">
             </div>
             <div class="product__sidebar__comment__item__text">
                 <ul>
