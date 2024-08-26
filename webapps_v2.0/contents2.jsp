@@ -125,7 +125,7 @@
 				    Connection conn1 = null;
 				    Statement stmt1 = null;
 				    ResultSet rs1 = null;
-				    PreparedStatement updateStmt1 = null;
+				    PreparedStatement updatestmt1 = null;
 				
 				    String jdbcDriver = "com.mysql.jdbc.Driver";
 				    String jdbcUrl = "jdbc:mysql://hf-db.cn482mka8n93.ap-northeast-2.rds.amazonaws.com:3306/test"; 
@@ -142,7 +142,7 @@
 						String sql2 = "UPDATE menu SET PRICE=6500 WHERE id=1;";
                         updateStmt1 = conn1.prepareStatement(sql2);
                             
-                        int rowsAffected = updateStmt1.executeUpdate(sql2);
+                        int rowsAffected = updatestmt1.executeUpdate(sql2);
 				
 				        if (rs1.next()) {
 				            String name1 = rs1.getString("name");
@@ -193,7 +193,7 @@
 				    Connection conn2 = null;
 				    Statement stmt2 = null;
 				    ResultSet rs2 = null;
-				    PreparedStatement updateStmt2 = null;
+				    PreparedStatement updatestmt2 = null;
 
 			
 				
@@ -213,9 +213,9 @@
 				        rs2 = stmt2.executeQuery(sql1);
 
 						String sql2 = "UPDATE menu SET PRICE=6500 WHERE id=2;";
-						updateStmt2 = conn2.prepareStatement(sql2);
+						updatestmt2 = conn2.prepareStatement(sql2);
 						
-						int rowsAffected = updateStmt2.executeUpdate();
+						int rowsAffected = updatestmt2.executeUpdate();
 				
 				        // Display menu item details
 				        if (rs2.next()) {
