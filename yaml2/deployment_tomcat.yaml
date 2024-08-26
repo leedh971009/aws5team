@@ -25,14 +25,14 @@ spec:
       affinity:
         podAntiAffinity: 
           preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 50
+          - weight: 100
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
-                - key: nginx
+                - key: app
                   operator: In
                   values:
-                  - nginx
+                  - tomcat
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
@@ -97,14 +97,14 @@ spec:
       affinity:
         podAntiAffinity: 
           preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 50
+          - weight: 100
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
-                - key: nginx
+                - key: app
                   operator: In
                   values:
-                  - nginx
+                  - tomcat
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
@@ -169,14 +169,14 @@ spec:
       affinity:
         podAntiAffinity: 
           preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 50
+          - weight: 100
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
-                - key: nginx
+                - key: app
                   operator: In
                   values:
-                  - nginx
+                  - tomcat
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
@@ -242,14 +242,14 @@ spec:
       affinity:
         podAntiAffinity: 
           preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 50
+          - weight: 100
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
-                - key: nginx
+                - key: app
                   operator: In
                   values:
-                  - nginx
+                  - tomcat
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
@@ -314,14 +314,14 @@ spec:
       affinity:
         podAntiAffinity: 
           preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 50
+          - weight: 100
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
-                - key: nginx
+                - key: app
                   operator: In
                   values:
-                  - nginx
+                  - tomcat
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
