@@ -139,7 +139,7 @@
 				        String sql1 = "SELECT * FROM menu WHERE id=1;";
 				        rs1 = stmt1.executeQuery(sql1);
 
-						String sql2 = "UPDATE menu SET PRICE=65000 WHERE id=1;";
+						String sql2 = "UPDATE menu SET PRICE=6500 WHERE id=1;";
                         updateStmt1 = conn1.prepareStatement(sql2);
                             
                         int rowsAffected = updateStmt1.executeUpdate(sql2);
@@ -212,7 +212,7 @@
 				        String sql1 = "SELECT * FROM menu WHERE id=2;";
 				        rs2 = stmt2.executeQuery(sql1);
 
-						String sql2 = "UPDATE menu SET PRICE=65000 WHERE id=2;";
+						String sql2 = "UPDATE menu SET PRICE=6500 WHERE id=2;";
 						updateStmt2 = conn2.prepareStatement(sql2);
 						
 						int rowsAffected = updateStmt2.executeUpdate();
