@@ -7,13 +7,13 @@ metadata:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:331090843244:certificate/3b5509a0-05ff-45e6-b37d-ffa5aeef5f44
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:381492076830:certificate/53951246-9dba-46c1-a4ef-2b488eb042e7
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
     alb.ingress.kubernetes.io/ssl-policy: ELBSecurityPolicy-2016-08
 spec:
   ingressClassName: alb
   rules:
-  - host: powernvp.shop
+  - host: kiminji.store
     http: 
       paths:
       - path: /
