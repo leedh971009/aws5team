@@ -33,6 +33,10 @@ spec:
                   operator: In
                   values:
                   - nginx
+                - key: name
+                  operator: In
+                  values:
+                  - index
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
@@ -51,11 +55,11 @@ spec:
           name: html
         resources:
           limits:
-            cpu: 200m
-            memory: 250Mi
+            cpu: 100m
+            memory: 150Mi
           requests:
-            cpu: 200m
-            memory: 250Mi
+            cpu: 100m
+            memory: 150Mi
         livenessProbe:
           httpGet:
             path: /
@@ -105,6 +109,10 @@ spec:
                   operator: In
                   values:
                   - nginx
+                - key: name
+                  operator: In
+                  values:
+                  - login
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
@@ -123,11 +131,11 @@ spec:
           name: html
         resources:
           limits:
-            cpu: 200m
-            memory: 250Mi
+            cpu: 100m
+            memory: 150Mi
           requests:
-            cpu: 200m
-            memory: 250Mi
+            cpu: 50m
+            memory: 100Mi
         livenessProbe:
           httpGet:
             path: /login.jsp
@@ -178,6 +186,10 @@ spec:
                   operator: In
                   values:
                   - nginx
+                - key: name
+                  operator: In
+                  values:
+                  - join
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
@@ -196,11 +208,11 @@ spec:
           name: html
         resources:
           limits:
-            cpu: 200m
-            memory: 250Mi
+            cpu: 100m
+            memory: 150Mi
           requests:
-            cpu: 200m
-            memory: 250Mi
+            cpu: 50m
+            memory: 100Mi
         livenessProbe:
           httpGet:
             path: /join.jsp
@@ -251,6 +263,10 @@ spec:
                   operator: In
                   values:
                   - nginx
+                - key: name
+                  operator: In
+                  values:
+                  - contents
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
@@ -269,11 +285,11 @@ spec:
           name: html
         resources:
           limits:
-            cpu: 200m
-            memory: 250Mi
+            cpu: 100m
+            memory: 150Mi
           requests:
-            cpu: 200m
-            memory: 250Mi
+            cpu: 100m
+            memory: 150Mi
         livenessProbe:
           httpGet:
             path: /contents.jsp
@@ -324,6 +340,10 @@ spec:
                   operator: In
                   values:
                   - nginx
+                - key: name
+                  operator: In
+                  values:
+                  - mypage
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
@@ -342,11 +362,11 @@ spec:
           name: html
         resources:
           limits:
-            cpu: 200m
-            memory: 250Mi
+            cpu: 100m
+            memory: 150Mi
           requests:
-            cpu: 200m
-            memory: 250Mi
+            cpu: 50m
+            memory: 100Mi
         livenessProbe:
           httpGet:
             path: /mypage.jsp
