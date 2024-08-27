@@ -156,7 +156,7 @@
 				        <div class="row">
                             		<div class="col-lg-4 col-md-6 col-sm-6">
                                         <div class="product__item">
-                                        <div class="product__item__pic set-bg" data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/contents/begin_again.jpg">
+                                        <div class="product__item__pic set-bg" data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/contents/begin_again_50.jpg">
 				                        <div class="ep"><%= price1 %>₩</div>
 				                        <div class="comment"><i class="fa fa-comments"></i><%= COMMENT1 %></div>
 				                        <div class="view"><i class="fa fa-eye"></i> <%= VIEW1 %></div>
@@ -229,7 +229,7 @@
 				        
 				            <div class="col-lg-4 col-md-6 col-sm-6">
 				                <div class="product__item">
-				                    <div class="product__item__pic set-bg" data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/contents/showman.jpg">
+				                    <div class="product__item__pic set-bg" data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/contents/showman_50.jpg">
 				                        <div class="ep"><%= price1 %>₩</div>
 				                        <div class="comment"><i class="fa fa-comments"></i><%= COMMENT1 %></div>
 				                        <div class="view"><i class="fa fa-eye"></i> <%= VIEW1 %></div>
@@ -293,7 +293,7 @@
 				        
 				            <div class="col-lg-4 col-md-6 col-sm-6">
 				                <div class="product__item">
-				                    <div class="product__item__pic set-bg" data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/contents/up.jpg">
+				                    <div class="product__item__pic set-bg" data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/contents/up_50.jpg">
 				                        <div class="ep"><%= price1 %>₩</div>
 				                        <div class="comment"><i class="fa fa-comments"></i><%= COMMENT1 %></div>
 				                        <div class="view"><i class="fa fa-eye"></i> <%= VIEW1 %></div>
@@ -358,7 +358,7 @@
 				        
 				            <div class="col-lg-4 col-md-6 col-sm-6">
 				                <div class="product__item">
-				                    <div class="product__item__pic set-bg" data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/contents/ironman.jpg">
+				                    <div class="product__item__pic set-bg" data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/contents/ironman_50.jpg">
 				                        <div class="ep"><%= price1 %>₩</div>
 				                        <div class="comment"><i class="fa fa-comments"></i><%= COMMENT1 %></div>
 				                        <div class="view"><i class="fa fa-eye"></i> <%= VIEW1 %></div>
@@ -419,7 +419,7 @@
 				        
 				            <div class="col-lg-4 col-md-6 col-sm-6">
 				                <div class="product__item">
-				                    <div class="product__item__pic set-bg" data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/contents/baseball.jpg">
+				                    <div class="product__item__pic set-bg" data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/contents/baseball_50.jpg">
 				                        <div class="ep"><%= price1 %>₩</div>
 				                        <div class="comment"><i class="fa fa-comments"></i><%= COMMENT1 %></div>
 				                        <div class="view"><i class="fa fa-eye"></i> <%= VIEW1 %></div>
@@ -482,7 +482,7 @@
 				        
 				            <div class="col-lg-4 col-md-6 col-sm-6">
 				                <div class="product__item">
-				                    <div class="product__item__pic set-bg" data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/contents/Transferring_Love.jpeg">
+				                    <div class="product__item__pic set-bg" data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/contents/Transferring_Love_50.jpg">
 				                        <div class="ep"><%= price1 %>₩</div>
 				                        <div class="comment"><i class="fa fa-comments"></i><%= COMMENT1 %></div>
 				                        <div class="view"><i class="fa fa-eye"></i> <%= VIEW1 %></div>
@@ -543,7 +543,7 @@
 				        
 				            <div class="col-lg-4 col-md-6 col-sm-6">
 				                <div class="product__item">
-				                    <div class="product__item__pic set-bg" data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/contents/spiderman.jpg">
+				                    <div class="product__item__pic set-bg" data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/contents/spiderman_50.jpg">
 				                        <div class="ep"><%= price1 %>₩</div>
 				                        <div class="comment"><i class="fa fa-comments"></i><%= COMMENT1 %></div>
 				                        <div class="view"><i class="fa fa-eye"></i> <%= VIEW1 %></div>
@@ -605,7 +605,7 @@
 				        
 				            <div class="col-lg-4 col-md-6 col-sm-6">
 				                <div class="product__item">
-				                    <div class="product__item__pic set-bg" data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/contents/kingsman.jpg">
+				                    <div class="product__item__pic set-bg" data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/contents/kingsman_50.jpg">
 				                        <div class="ep"><%= price1 %>₩</div>
 				                        <div class="comment"><i class="fa fa-comments"></i><%= COMMENT1 %></div>
 				                        <div class="view"><i class="fa fa-eye"></i> <%= VIEW1 %></div>
@@ -669,7 +669,7 @@
 				        
 				            <div class="col-lg-4 col-md-6 col-sm-6">
 				                <div class="product__item">
-				                    <div class="product__item__pic set-bg" data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/contents/tears.jpg">
+				                    <div class="product__item__pic set-bg" data-setbg="https://hf-vpc-prd-s3.s3.ap-northeast-2.amazonaws.com/img/contents/tears_50.jpg">
 				                        <div class="ep"><%= price1 %>₩</div>
 				                        <div class="comment"><i class="fa fa-comments"></i><%= COMMENT1 %></div>
 				                        <div class="view"><i class="fa fa-eye"></i> <%= VIEW1 %></div>
