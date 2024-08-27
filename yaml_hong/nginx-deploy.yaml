@@ -240,7 +240,7 @@ spec:
               app: nginx
       containers:
       - image: 381492076830.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-contents:v1.0
-        name: menu
+        name: contents
         ports:
         - containerPort: 80
         resources:
