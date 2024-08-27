@@ -25,7 +25,7 @@ spec:
       affinity:
         podAntiAffinity: 
           preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 50
+          - weight: 100
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
@@ -46,6 +46,9 @@ spec:
         name: tomcat-index-deploy
         ports:
         - containerPort: 8080
+        volumeMounts:
+        - mountPath: "/opt/tomcat/webapps/ROOT/data"
+          name: html
         resources:
           limits:
             cpu: 200m
@@ -58,10 +61,14 @@ spec:
             path: /
             port: 8080
           initialDelaySeconds: 15
-          periodSeconds: 60
-          timeoutSeconds: 60
+          periodSeconds: 20
+          timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: pvc-tomcat
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -90,7 +97,7 @@ spec:
       affinity:
         podAntiAffinity: 
           preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 50
+          - weight: 100
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
@@ -111,6 +118,9 @@ spec:
         name: tomcat-login-deploy
         ports:
         - containerPort: 8080
+        volumeMounts:
+        - mountPath: "/opt/tomcat/webapps/ROOT/data"
+          name: html
         resources:
           limits:
             cpu: 200m
@@ -123,10 +133,14 @@ spec:
             path: /login.jsp
             port: 8080
           initialDelaySeconds: 15
-          periodSeconds: 60
-          timeoutSeconds: 60
+          periodSeconds: 20
+          timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: pvc-tomcat
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -155,7 +169,7 @@ spec:
       affinity:
         podAntiAffinity: 
           preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 50
+          - weight: 100
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
@@ -176,6 +190,9 @@ spec:
         name: tomcat-join-deploy
         ports:
         - containerPort: 8080
+        volumeMounts:
+        - mountPath: "/opt/tomcat/webapps/ROOT/data"
+          name: html
         resources:
           limits:
             cpu: 200m
@@ -188,10 +205,14 @@ spec:
             path: /join.jsp
             port: 8080
           initialDelaySeconds: 15
-          periodSeconds: 60
-          timeoutSeconds: 60
+          periodSeconds: 20
+          timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: pvc-tomcat
 
 ---
 apiVersion: apps/v1
@@ -221,7 +242,7 @@ spec:
       affinity:
         podAntiAffinity: 
           preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 50
+          - weight: 100
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
@@ -242,6 +263,9 @@ spec:
         name: tomcat-contents-deploy
         ports:
         - containerPort: 8080
+        volumeMounts:
+        - mountPath: "/opt/tomcat/webapps/ROOT/data"
+          name: html
         resources:
           limits:
             cpu: 200m
@@ -254,11 +278,14 @@ spec:
             path: /contents.jsp
             port: 8080
           initialDelaySeconds: 15
-          periodSeconds: 60
-          timeoutSeconds: 60
+          periodSeconds: 20
+          timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
-
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: pvc-tomcat
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -287,7 +314,7 @@ spec:
       affinity:
         podAntiAffinity: 
           preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 50
+          - weight: 100
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
@@ -308,6 +335,9 @@ spec:
         name: tomcat-mypage-deploy
         ports:
         - containerPort: 8080
+        volumeMounts:
+        - mountPath: "/opt/tomcat/webapps/ROOT/data"
+          name: html
         resources:
           limits:
             cpu: 200m
@@ -320,7 +350,14 @@ spec:
             path: /mypage.jsp
             port: 8080
           initialDelaySeconds: 15
-          periodSeconds: 60
-          timeoutSeconds: 60
+          periodSeconds: 20
+          timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: pvc-tomcat
+          
+
+

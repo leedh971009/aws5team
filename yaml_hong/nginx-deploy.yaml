@@ -25,7 +25,7 @@ spec:
       affinity:
         podAntiAffinity: 
           preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 50
+          - weight: 100
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
@@ -46,6 +46,9 @@ spec:
         name: index
         ports:
         - containerPort: 80
+        volumeMounts:
+        - mountPath: "/usr/share/nginx/html/data"
+          name: html
         resources:
           limits:
             cpu: 200m
@@ -62,6 +65,10 @@ spec:
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: pvc-nginx
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -90,7 +97,7 @@ spec:
       affinity:
         podAntiAffinity: 
           preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 50
+          - weight: 100
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
@@ -111,6 +118,9 @@ spec:
         name: login
         ports:
         - containerPort: 80
+        volumeMounts:
+        - mountPath: "/usr/share/nginx/html/data"
+          name: html
         resources:
           limits:
             cpu: 200m
@@ -127,6 +137,10 @@ spec:
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: pvc-nginx
 
 ---
 apiVersion: apps/v1
@@ -156,7 +170,7 @@ spec:
       affinity:
         podAntiAffinity: 
           preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 50
+          - weight: 100
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
@@ -177,6 +191,9 @@ spec:
         name: join
         ports:
         - containerPort: 80
+        volumeMounts:
+        - mountPath: "/usr/share/nginx/html/data"
+          name: html
         resources:
           limits:
             cpu: 200m
@@ -193,6 +210,10 @@ spec:
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: pvc-nginx
 
 ---
 apiVersion: apps/v1
@@ -222,7 +243,7 @@ spec:
       affinity:
         podAntiAffinity: 
           preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 50
+          - weight: 100
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
@@ -243,6 +264,9 @@ spec:
         name: contents
         ports:
         - containerPort: 80
+        volumeMounts:
+        - mountPath: "/usr/share/nginx/html/data"
+          name: html
         resources:
           limits:
             cpu: 200m
@@ -259,6 +283,10 @@ spec:
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: pvc-nginx
 
 ---
 apiVersion: apps/v1
@@ -288,7 +316,7 @@ spec:
       affinity:
         podAntiAffinity: 
           preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 50
+          - weight: 100
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
@@ -309,6 +337,9 @@ spec:
         name: mypage
         ports:
         - containerPort: 80
+        volumeMounts:
+        - mountPath: "/usr/share/nginx/html/data"
+          name: html
         resources:
           limits:
             cpu: 200m
@@ -325,3 +356,7 @@ spec:
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: pvc-nginx
