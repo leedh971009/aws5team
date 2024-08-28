@@ -24,27 +24,23 @@ spec:
     spec:
       affinity:
         podAntiAffinity: 
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - podAffinityTerm:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
               labelSelector:
                 matchExpressions:
                 - key: app
                   operator: In
                   values:
                   - nginx
-                - key: name
-                  operator: In
-                  values:
-                  - index  
-              topologyKey: topologyKey: kubernetes.io/hostname
+              topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: topologyKey: kubernetes.io/zone
+          topologyKey: topology.kubernetes.io/zone
           whenUnsatisfiable: DoNotSchedule
           labelSelector:
             matchLabels:
               app: nginx
-              name: index
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-index:v2.0
         name: index
@@ -100,27 +96,23 @@ spec:
     spec:
       affinity:
         podAntiAffinity: 
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - podAffinityTerm:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
               labelSelector:
                 matchExpressions:
                 - key: app
                   operator: In
                   values:
                   - nginx
-                - key: name
-                  operator: In
-                  values:
-                  - login  
-              topologyKey: topologyKey: kubernetes.io/hostname
+              topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: topologyKey: kubernetes.io/zone
+          topologyKey: topology.kubernetes.io/zone
           whenUnsatisfiable: DoNotSchedule
           labelSelector:
             matchLabels:
               app: nginx
-              name: login
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-login:v2.0
         name: login
@@ -177,27 +169,23 @@ spec:
     spec:
       affinity:
         podAntiAffinity: 
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - podAffinityTerm:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
               labelSelector:
                 matchExpressions:
                 - key: app
                   operator: In
                   values:
                   - nginx
-                - key: name
-                  operator: In
-                  values:
-                  - join  
-              topologyKey: topologyKey: kubernetes.io/hostname
+              topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: topologyKey: kubernetes.io/zone
+          topologyKey: topology.kubernetes.io/zone
           whenUnsatisfiable: DoNotSchedule
           labelSelector:
             matchLabels:
               app: nginx
-              name: join
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-join:v2.0
         name: join
@@ -254,27 +242,23 @@ spec:
     spec:
       affinity:
         podAntiAffinity: 
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - podAffinityTerm:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
               labelSelector:
                 matchExpressions:
                 - key: app
                   operator: In
                   values:
                   - nginx
-                - key: name
-                  operator: In
-                  values:
-                  - contents  
-              topologyKey: topologyKey: kubernetes.io/hostname
+              topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: topologyKey: kubernetes.io/zone
+          topologyKey: topology.kubernetes.io/zone
           whenUnsatisfiable: DoNotSchedule
           labelSelector:
             matchLabels:
               app: nginx
-              name: contents
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-contents:v2.0
         name: contents
@@ -331,27 +315,23 @@ spec:
     spec:
       affinity:
         podAntiAffinity: 
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - podAffinityTerm:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
               labelSelector:
                 matchExpressions:
                 - key: app
                   operator: In
                   values:
                   - nginx
-                - key: name
-                  operator: In
-                  values:
-                  - mypage
-              topologyKey: topologyKey: kubernetes.io/hostname
+              topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: topologyKey: kubernetes.io/zone
+          topologyKey: topology.kubernetes.io/zone
           whenUnsatisfiable: DoNotSchedule
           labelSelector:
             matchLabels:
               app: nginx
-              name: mypage
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-mypage:v2.0
         name: mypage
