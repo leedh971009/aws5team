@@ -33,6 +33,10 @@ spec:
                   operator: In
                   values:
                   - nginx
+                - key: name
+                  operator: In
+                  values:
+                  - index  
               topologyKey: kubernetes.io/hostname
       topologySpreadConstraints:
         - maxSkew: 1
@@ -105,6 +109,10 @@ spec:
                   operator: In
                   values:
                   - nginx
+                - key: name
+                  operator: In
+                  values:
+                  - login  
               topologyKey: kubernetes.io/hostname
       topologySpreadConstraints:
         - maxSkew: 1
@@ -178,6 +186,10 @@ spec:
                   operator: In
                   values:
                   - nginx
+                - key: name
+                  operator: In
+                  values:
+                  - join  
               topologyKey: kubernetes.io/hostname
       topologySpreadConstraints:
         - maxSkew: 1
@@ -251,6 +263,10 @@ spec:
                   operator: In
                   values:
                   - nginx
+                - key: name
+                  operator: In
+                  values:
+                  - contents  
               topologyKey: kubernetes.io/hostname
       topologySpreadConstraints:
         - maxSkew: 1
@@ -324,6 +340,10 @@ spec:
                   operator: In
                   values:
                   - nginx
+                - key: name
+                  operator: In
+                  values:
+                  - mypage  
               topologyKey: kubernetes.io/hostname
       topologySpreadConstraints:
         - maxSkew: 1
