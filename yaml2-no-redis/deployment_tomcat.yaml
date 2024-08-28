@@ -32,15 +32,11 @@ spec:
                 - key: app
                   operator: In
                   values:
-                  - tomcat
-                - key: name
-                  operator: In
-                  values:
-                  - index    
-              topologyKey: topology.kubernetes.io/zone
+                  - tomcat    
+              topologyKey: kubernetes.io/hostname
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: topology.kubernetes.io/zone
+          topologyKey: kubernetes.io/hostname
           whenUnsatisfiable: DoNotSchedule
           labelSelector:
             matchLabels:
@@ -108,15 +104,11 @@ spec:
                 - key: app
                   operator: In
                   values:
-                  - tomcat
-                - key: name
-                  operator: In
-                  values:
-                  - login   
-              topologyKey: topology.kubernetes.io/zone
+                  - tomcat  
+              topologyKey: kubernetes.io/hostname
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: topology.kubernetes.io/zone
+          topologyKey: kubernetes.io/hostname
           whenUnsatisfiable: DoNotSchedule
           labelSelector:
             matchLabels:
@@ -184,15 +176,11 @@ spec:
                 - key: app
                   operator: In
                   values:
-                  - tomcat
-                - key: name
-                  operator: In
-                  values:
-                  - join  
-              topologyKey: topology.kubernetes.io/zone
+                  - tomcat 
+              topologyKey: kubernetes.io/hostname
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: topology.kubernetes.io/zone
+          topologyKey: kubernetes.io/hostname
           whenUnsatisfiable: DoNotSchedule
           labelSelector:
             matchLabels:
@@ -261,15 +249,11 @@ spec:
                 - key: app
                   operator: In
                   values:
-                  - tomcat
-                - key: name
-                  operator: In
-                  values:
-                  - contents  
-              topologyKey: topology.kubernetes.io/zone
+                  - tomcat 
+              topologyKey: kubernetes.io/hostname
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: topology.kubernetes.io/zone
+          topologyKey: kubernetes.io/hostname
           whenUnsatisfiable: DoNotSchedule
           labelSelector:
             matchLabels:
@@ -338,14 +322,10 @@ spec:
                   operator: In
                   values:
                   - tomcat
-                - key: name
-                  operator: In
-                  values:
-                  - mypage  
-              topologyKey: topology.kubernetes.io/zone
+              topologyKey: kubernetes.io/hostname
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: topology.kubernetes.io/zone
+          topologyKey: kubernetes.io/hostname
           whenUnsatisfiable: DoNotSchedule
           labelSelector:
             matchLabels:
