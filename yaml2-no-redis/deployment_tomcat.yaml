@@ -36,6 +36,8 @@ spec:
                 values:
                 - index
             topologyKey: "kubernetes.io/hostname"
+            namespaces:
+            - nginx
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: "kubernetes.io/hostname"
@@ -110,6 +112,8 @@ spec:
                 values:
                 - login
             topologyKey: "kubernetes.io/hostname"
+            namespaces:
+            - nginx
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: "kubernetes.io/hostname"
@@ -184,6 +188,8 @@ spec:
                 values:
                 - join
             topologyKey: "kubernetes.io/hostname"
+            namespaces:
+            - nginx
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: "kubernetes.io/hostname"
@@ -259,6 +265,23 @@ spec:
                 values:
                 - contents
             topologyKey: "kubernetes.io/hostname"
+            namespaces:
+            - nginx
+        podAntiAffinity: 
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - tomcat
+                - key: name
+                  operator: In
+                  values:
+                  - contents  
+              topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: "kubernetes.io/hostname"
@@ -333,6 +356,23 @@ spec:
                 values:
                 - mypage
             topologyKey: "kubernetes.io/hostname"
+            namespaces:
+            - nginx
+        podAntiAffinity: 
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - tomcat
+                - key: name
+                  operator: In
+                  values:
+                  - mypage 
+              topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: "kubernetes.io/hostname"
