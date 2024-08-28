@@ -32,11 +32,7 @@ spec:
                 - key: app
                   operator: In
                   values:
-                  - nginx
-                - key: name
-                  operator: In
-                  values:
-                  - index  
+                  - nginx  
               topologyKey: kubernetes.io/hostname
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-index:v2.0
@@ -101,11 +97,7 @@ spec:
                 - key: app
                   operator: In
                   values:
-                  - nginx
-                - key: name
-                  operator: In
-                  values:
-                  - login  
+                  - nginx  
               topologyKey: kubernetes.io/hostname
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-login:v2.0
@@ -171,11 +163,7 @@ spec:
                 - key: app
                   operator: In
                   values:
-                  - nginx
-                - key: name
-                  operator: In
-                  values:
-                  - join  
+                  - nginx 
               topologyKey: kubernetes.io/hostname
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-join:v2.0
@@ -241,11 +229,7 @@ spec:
                 - key: app
                   operator: In
                   values:
-                  - nginx
-                - key: name
-                  operator: In
-                  values:
-                  - contents  
+                  - nginx 
               topologyKey: kubernetes.io/hostname
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-contents:v2.0
@@ -311,11 +295,7 @@ spec:
                 - key: app
                   operator: In
                   values:
-                  - nginx
-                - key: name
-                  operator: In
-                  values:
-                  - mypage  
+                  - nginx 
               topologyKey: kubernetes.io/hostname
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-mypage:v2.0
