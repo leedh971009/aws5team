@@ -38,13 +38,6 @@ spec:
                   values:
                   - index  
               topologyKey: kubernetes.io/hostname
-      topologySpreadConstraints:
-        - maxSkew: 1
-          topologyKey: kubernetes.io/hostname
-          whenUnsatisfiable: DoNotSchedule
-          labelSelector:
-            matchLabels:
-              app: tomcat
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-index:v1.0
         name: tomcat-index-deploy
@@ -114,13 +107,6 @@ spec:
                   values:
                   - login  
               topologyKey: kubernetes.io/hostname
-      topologySpreadConstraints:
-        - maxSkew: 1
-          topologyKey: kubernetes.io/hostname
-          whenUnsatisfiable: DoNotSchedule
-          labelSelector:
-            matchLabels:
-              app: tomcat
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-login:v1.0
         name: tomcat-login-deploy
@@ -190,13 +176,6 @@ spec:
                   values:
                   - join  
               topologyKey: kubernetes.io/hostname
-      topologySpreadConstraints:
-        - maxSkew: 1
-          topologyKey: kubernetes.io/hostname
-          whenUnsatisfiable: DoNotSchedule
-          labelSelector:
-            matchLabels:
-              app: tomcat
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-join:v1.0
         name: tomcat-join-deploy
@@ -267,13 +246,6 @@ spec:
                   values:
                   - contents  
               topologyKey: kubernetes.io/hostname
-      topologySpreadConstraints:
-        - maxSkew: 1
-          topologyKey: kubernetes.io/hostname
-          whenUnsatisfiable: DoNotSchedule
-          labelSelector:
-            matchLabels:
-              app: tomcat
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-contents:v1.0
         name: tomcat-contents-deploy
@@ -343,13 +315,6 @@ spec:
                   values:
                   - mypage  
               topologyKey: kubernetes.io/hostname
-      topologySpreadConstraints:
-        - maxSkew: 1
-          topologyKey: kubernetes.io/hostname
-          whenUnsatisfiable: DoNotSchedule
-          labelSelector:
-            matchLabels:
-              app: tomcat
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-mypage:v1.0
         name: tomcat-mypage-deploy
