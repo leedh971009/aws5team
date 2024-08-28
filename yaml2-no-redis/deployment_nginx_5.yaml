@@ -29,6 +29,10 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - tomcat
                 - key: name
                   operator: In
                   values:
@@ -112,6 +116,10 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - tomcat
                 - key: name
                   operator: In
                   values:
@@ -196,6 +204,10 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - tomcat
                 - key: name
                   operator: In
                   values:
@@ -280,6 +292,10 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - tomcat
                 - key: name
                   operator: In
                   values:
@@ -364,6 +380,10 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - tomcat
                 - key: name
                   operator: In
                   values:
