@@ -24,8 +24,8 @@ spec:
     spec:
       affinity:
         podAntiAffinity: 
-          requiredDuringSchedulingIgnoredDuringExecution:
-           
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
@@ -100,8 +100,9 @@ spec:
     spec:
       affinity:
         podAntiAffinity: 
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - podAffinityTerm:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
               labelSelector:
                 matchExpressions:
                 - key: app
@@ -175,8 +176,9 @@ spec:
     spec:
       affinity:
         podAntiAffinity: 
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - podAffinityTerm:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
               labelSelector:
                 matchExpressions:
                 - key: app
@@ -251,8 +253,9 @@ spec:
     spec:
       affinity:
         podAntiAffinity: 
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - podAffinityTerm:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
               labelSelector:
                 matchExpressions:
                 - key: app
@@ -326,8 +329,9 @@ spec:
     spec:
       affinity:
         podAntiAffinity: 
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - podAffinityTerm:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
               labelSelector:
                 matchExpressions:
                 - key: app
