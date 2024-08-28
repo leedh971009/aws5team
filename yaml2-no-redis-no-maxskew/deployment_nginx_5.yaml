@@ -29,6 +29,10 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - nginx
                 - key: name
                   operator: In
                   values:
@@ -94,6 +98,10 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - nginx
                 - key: name
                   operator: In
                   values:
@@ -160,6 +168,10 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - nginx
                 - key: name
                   operator: In
                   values:
@@ -226,6 +238,10 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - nginx
                 - key: name
                   operator: In
                   values:
@@ -292,6 +308,10 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - nginx
                 - key: name
                   operator: In
                   values:
