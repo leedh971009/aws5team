@@ -41,6 +41,7 @@ spec:
           labelSelector:
             matchLabels:
               app: nginx
+              name: index
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-index:v2.0
         name: index
@@ -113,6 +114,7 @@ spec:
           labelSelector:
             matchLabels:
               app: nginx
+              name: index
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-login:v2.0
         name: login
@@ -186,6 +188,7 @@ spec:
           labelSelector:
             matchLabels:
               app: nginx
+              name: index
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-join:v2.0
         name: join
@@ -259,8 +262,9 @@ spec:
           labelSelector:
             matchLabels:
               app: nginx
+              name: index
       containers:
-      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-contents:v4.0
+      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-contents:v2.0
         name: contents
         ports:
         - containerPort: 80
@@ -332,6 +336,7 @@ spec:
           labelSelector:
             matchLabels:
               app: nginx
+              name: index
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-mypage:v2.0
         name: mypage
