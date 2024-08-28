@@ -37,10 +37,10 @@ spec:
                   operator: In
                   values:
                   - index
-              topologyKey: topology.kubernetes.io/zone
+              topologyKey: kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: topology.kubernetes.io/hostname
+          topologyKey: kubernetes.io/hostname
           whenUnsatisfiable: DoNotSchedule
           labelSelector:
             matchLabels:
@@ -114,10 +114,10 @@ spec:
                   operator: In
                   values:
                   - login
-              topologyKey: topology.kubernetes.io/zone
+              topologyKey: kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: topology.kubernetes.io/hostname
+          topologyKey: kubernetes.io/hostname
           whenUnsatisfiable: DoNotSchedule
           labelSelector:
             matchLabels:
@@ -191,10 +191,10 @@ spec:
                   operator: In
                   values:
                   - join
-              topologyKey: topology.kubernetes.io/zone
+              topologyKey: kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: topology.kubernetes.io/hostname
+          topologyKey: kubernetes.io/hostname
           whenUnsatisfiable: DoNotSchedule
           labelSelector:
             matchLabels:
@@ -269,10 +269,10 @@ spec:
                   operator: In
                   values:
                   - contents
-              topologyKey: topology.kubernetes.io/zone
+              topologyKey: kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: topology.kubernetes.io/hostname
+          topologyKey: kubernetes.io/hostname
           whenUnsatisfiable: DoNotSchedule
           labelSelector:
             matchLabels:
@@ -346,10 +346,10 @@ spec:
                   operator: In
                   values:
                   - mypage
-              topologyKey: topology.kubernetes.io/zone
+              topologyKey: kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: topology.kubernetes.io/hostname
+          topologyKey: kubernetes.io/hostname
           whenUnsatisfiable: DoNotSchedule
           labelSelector:
             matchLabels:
