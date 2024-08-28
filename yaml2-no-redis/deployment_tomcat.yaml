@@ -32,11 +32,7 @@ spec:
                 - key: app
                   operator: In
                   values:
-                  - tomcat
-                - key: name
-                  operator: In
-                  values:
-                  - index  
+                  - tomcat 
               topologyKey: kubernetes.io/hostname
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-index:v1.0
@@ -102,10 +98,6 @@ spec:
                   operator: In
                   values:
                   - tomcat
-                - key: name
-                  operator: In
-                  values:
-                  - login  
               topologyKey: kubernetes.io/hostname
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-login:v1.0
@@ -170,11 +162,7 @@ spec:
                 - key: app
                   operator: In
                   values:
-                  - tomcat
-                - key: name
-                  operator: In
-                  values:
-                  - join  
+                  - tomcat  
               topologyKey: kubernetes.io/hostname
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-join:v1.0
@@ -240,11 +228,7 @@ spec:
                 - key: app
                   operator: In
                   values:
-                  - tomcat
-                - key: name
-                  operator: In
-                  values:
-                  - contents  
+                  - tomcat 
               topologyKey: kubernetes.io/hostname
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-contents:v1.0
@@ -310,10 +294,6 @@ spec:
                   operator: In
                   values:
                   - tomcat
-                - key: name
-                  operator: In
-                  values:
-                  - mypage  
               topologyKey: kubernetes.io/hostname
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-mypage:v1.0
