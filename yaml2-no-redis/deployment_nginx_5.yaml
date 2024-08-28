@@ -126,8 +126,8 @@ spec:
             cpu: 200m
             memory: 250Mi
           requests:
-            cpu: 200m
-            memory: 250Mi
+            cpu: 100m
+            memory: 150Mi
         livenessProbe:
           httpGet:
             path: /login.jsp
@@ -199,8 +199,8 @@ spec:
             cpu: 200m
             memory: 250Mi
           requests:
-            cpu: 200m
-            memory: 250Mi
+            cpu: 100m
+            memory: 150Mi
         livenessProbe:
           httpGet:
             path: /join.jsp
@@ -345,8 +345,8 @@ spec:
             cpu: 200m
             memory: 250Mi
           requests:
-            cpu: 200m
-            memory: 250Mi
+            cpu: 100m
+            memory: 150Mi
         livenessProbe:
           httpGet:
             path: /mypage.jsp
