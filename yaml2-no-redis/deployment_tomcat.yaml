@@ -358,21 +358,6 @@ spec:
             topologyKey: "kubernetes.io/hostname"
             namespaces:
             - nginx
-        podAntiAffinity: 
-          preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 100
-            podAffinityTerm:
-              labelSelector:
-                matchExpressions:
-                - key: app
-                  operator: In
-                  values:
-                  - tomcat
-                - key: name
-                  operator: In
-                  values:
-                  - mypage 
-              topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: "kubernetes.io/hostname"
