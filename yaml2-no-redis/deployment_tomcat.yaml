@@ -26,7 +26,7 @@ spec:
         podAntiAffinity: 
           requiredDuringSchedulingIgnoredDuringExecution:
             podAffinityTerm:
-              labelSelector:
+            - labelSelector:
                 matchExpressions:
                 - key: app
                   operator: In
@@ -100,7 +100,7 @@ spec:
       affinity:
         podAntiAffinity: 
           requiredDuringSchedulingIgnoredDuringExecution:
-            podAffinityTerm:
+          - podAffinityTerm:
               labelSelector:
                 matchExpressions:
                 - key: app
@@ -175,7 +175,7 @@ spec:
       affinity:
         podAntiAffinity: 
           requiredDuringSchedulingIgnoredDuringExecution:
-            podAffinityTerm:
+          - podAffinityTerm:
               labelSelector:
                 matchExpressions:
                 - key: app
@@ -252,7 +252,7 @@ spec:
         podAntiAffinity: 
           requiredDuringSchedulingIgnoredDuringExecution:
             podAffinityTerm:
-              labelSelector:
+            - labelSelector:
                 matchExpressions:
                 - key: app
                   operator: In
@@ -327,7 +327,7 @@ spec:
         podAntiAffinity: 
           requiredDuringSchedulingIgnoredDuringExecution:
             podAffinityTerm:
-              labelSelector:
+            - labelSelector:
                 matchExpressions:
                 - key: app
                   operator: In
