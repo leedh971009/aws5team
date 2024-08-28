@@ -46,7 +46,7 @@ spec:
                 operator: In
                 values:
                 - index  
-            topologyKey: "topology.kubernetes.io/zone"    
+            topologyKey: "kubernetes.io/hostname"    
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: "kubernetes.io/hostname"
@@ -131,7 +131,7 @@ spec:
                 operator: In
                 values:
                 - login  
-            topologyKey: "topology.kubernetes.io/zone"    
+            topologyKey: "kubernetes.io/hostname"    
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: "kubernetes.io/hostname"
@@ -216,7 +216,7 @@ spec:
                 operator: In
                 values:
                 - join  
-            topologyKey: "topology.kubernetes.io/zone"   
+            topologyKey: "kubernetes.io/hostname"   
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: "kubernetes.io/hostname"
@@ -302,7 +302,7 @@ spec:
                 operator: In
                 values:
                 - contents  
-            topologyKey: "topology.kubernetes.io/zone"    
+            topologyKey: "kubernetes.io/hostname"    
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: "kubernetes.io/hostname"
@@ -387,7 +387,7 @@ spec:
                 operator: In
                 values:
                 - mypage  
-            topologyKey: "topology.kubernetes.io/zone"    
+            topologyKey: "kubernetes.io/hostname"    
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: "kubernetes.io/hostname"
