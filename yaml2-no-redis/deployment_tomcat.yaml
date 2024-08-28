@@ -45,6 +45,7 @@ spec:
           labelSelector:
             matchLabels:
               app: tomcat
+              name: index
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-index:v1.0
         name: tomcat-index-deploy
@@ -121,6 +122,7 @@ spec:
           labelSelector:
             matchLabels:
               app: tomcat
+              name: login
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-login:v1.0
         name: tomcat-login-deploy
@@ -197,6 +199,7 @@ spec:
           labelSelector:
             matchLabels:
               app: tomcat
+              name: join
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-join:v1.0
         name: tomcat-join-deploy
@@ -274,6 +277,7 @@ spec:
           labelSelector:
             matchLabels:
               app: tomcat
+              name: contents
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-contents:v1.0
         name: tomcat-contents-deploy
@@ -350,6 +354,7 @@ spec:
           labelSelector:
             matchLabels:
               app: tomcat
+              name: mypage
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-mypage:v1.0
         name: tomcat-mypage-deploy
