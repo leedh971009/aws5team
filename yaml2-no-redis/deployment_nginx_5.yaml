@@ -24,27 +24,23 @@ spec:
     spec:
       affinity:
         podAntiAffinity: 
-          requiredDuringSchedulingIgnoredDuringExecution:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
             podAffinityTerm:
-            - labelSelector:
+              labelSelector:
                 matchExpressions:
                 - key: app
                   operator: In
                   values:
                   - nginx
-                - key: name
-                  operator: In
-                  values:
-                  - index
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: topology.kubernetes.io/zone
-          whenUnsatisfiable: DoNotSchedule
+          whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
               app: nginx
-              name: index
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-index:v2.0
         name: index
@@ -55,11 +51,11 @@ spec:
           name: html
         resources:
           limits:
-            cpu: 100m
-            memory: 150Mi
+            cpu: 200m
+            memory: 250Mi
           requests:
-            cpu: 100m
-            memory: 150Mi
+            cpu: 200m
+            memory: 250Mi
         livenessProbe:
           httpGet:
             path: /
@@ -100,27 +96,23 @@ spec:
     spec:
       affinity:
         podAntiAffinity: 
-          requiredDuringSchedulingIgnoredDuringExecution:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
             podAffinityTerm:
-            - labelSelector:
+              labelSelector:
                 matchExpressions:
                 - key: app
                   operator: In
                   values:
                   - nginx
-                - key: name
-                  operator: In
-                  values:
-                  - login
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: topology.kubernetes.io/zone
-          whenUnsatisfiable: DoNotSchedule
+          whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
               app: nginx
-              name: login
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-login:v2.0
         name: login
@@ -131,11 +123,11 @@ spec:
           name: html
         resources:
           limits:
-            cpu: 100m
-            memory: 150Mi
+            cpu: 200m
+            memory: 250Mi
           requests:
-            cpu: 50m
-            memory: 100Mi
+            cpu: 200m
+            memory: 250Mi
         livenessProbe:
           httpGet:
             path: /login.jsp
@@ -177,27 +169,23 @@ spec:
     spec:
       affinity:
         podAntiAffinity: 
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - podAffinityTerm:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
               labelSelector:
                 matchExpressions:
                 - key: app
                   operator: In
                   values:
                   - nginx
-                - key: name
-                  operator: In
-                  values:
-                  - join
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: topology.kubernetes.io/zone
-          whenUnsatisfiable: DoNotSchedule
+          whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
               app: nginx
-              name: join
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-join:v2.0
         name: join
@@ -208,11 +196,11 @@ spec:
           name: html
         resources:
           limits:
-            cpu: 100m
-            memory: 150Mi
+            cpu: 200m
+            memory: 250Mi
           requests:
-            cpu: 50m
-            memory: 100Mi
+            cpu: 200m
+            memory: 250Mi
         livenessProbe:
           httpGet:
             path: /join.jsp
@@ -254,29 +242,25 @@ spec:
     spec:
       affinity:
         podAntiAffinity: 
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - podAffinityTerm:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
               labelSelector:
                 matchExpressions:
                 - key: app
                   operator: In
                   values:
                   - nginx
-                - key: name
-                  operator: In
-                  values:
-                  - contents
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: topology.kubernetes.io/zone
-          whenUnsatisfiable: DoNotSchedule
+          whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
               app: nginx
-              name: contents
       containers:
-      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-contents:v2.0
+      - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-contents:v4.0
         name: contents
         ports:
         - containerPort: 80
@@ -285,11 +269,11 @@ spec:
           name: html
         resources:
           limits:
-            cpu: 100m
-            memory: 150Mi
+            cpu: 200m
+            memory: 250Mi
           requests:
-            cpu: 100m
-            memory: 150Mi
+            cpu: 200m
+            memory: 250Mi
         livenessProbe:
           httpGet:
             path: /contents.jsp
@@ -331,27 +315,23 @@ spec:
     spec:
       affinity:
         podAntiAffinity: 
-          requiredDuringSchedulingIgnoredDuringExecution:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
             podAffinityTerm:
-            - labelSelector:
+              labelSelector:
                 matchExpressions:
                 - key: app
                   operator: In
                   values:
                   - nginx
-                - key: name
-                  operator: In
-                  values:
-                  - mypage
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: topology.kubernetes.io/zone
-          whenUnsatisfiable: DoNotSchedule
+          whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
               app: nginx
-              name: mypage
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-mypage:v2.0
         name: mypage
@@ -362,11 +342,11 @@ spec:
           name: html
         resources:
           limits:
-            cpu: 100m
-            memory: 150Mi
+            cpu: 200m
+            memory: 250Mi
           requests:
-            cpu: 50m
-            memory: 100Mi
+            cpu: 200m
+            memory: 250Mi
         livenessProbe:
           httpGet:
             path: /mypage.jsp
