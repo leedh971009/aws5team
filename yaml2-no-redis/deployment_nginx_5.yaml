@@ -41,7 +41,6 @@ spec:
           labelSelector:
             matchLabels:
               app: nginx
-              name: index
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-index:v2.0
         name: index
@@ -93,7 +92,6 @@ spec:
     metadata:
       labels:
         app: nginx
-        name: login
     spec:
       affinity:
         podAntiAffinity: 
@@ -167,7 +165,6 @@ spec:
     metadata:
       labels:
         app: nginx
-        name: join
     spec:
       affinity:
         podAntiAffinity: 
@@ -262,7 +259,6 @@ spec:
           labelSelector:
             matchLabels:
               app: nginx
-              name: index
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-contents:v2.0
         name: contents
@@ -336,7 +332,6 @@ spec:
           labelSelector:
             matchLabels:
               app: nginx
-              name: index
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-mypage:v2.0
         name: mypage
