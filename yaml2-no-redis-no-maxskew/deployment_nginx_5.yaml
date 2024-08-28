@@ -46,7 +46,7 @@ spec:
             matchLabels:
               app: nginx
         - maxSkew: 1
-          topologyKey: "kubernetes.io/zone"
+          topologyKey: "topology.kubernetes.io/zone"
           whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
@@ -128,7 +128,7 @@ spec:
             matchLabels:
               app: nginx
         - maxSkew: 1
-          topologyKey: "kubernetes.io/zone"
+          topologyKey: "topology.kubernetes.io/zone"
           whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
@@ -211,7 +211,7 @@ spec:
             matchLabels:
               app: nginx
         - maxSkew: 1
-          topologyKey: "kubernetes.io/zone"
+          topologyKey: "topology.kubernetes.io/zone"
           whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
@@ -294,7 +294,7 @@ spec:
             matchLabels:
               app: nginx
         - maxSkew: 1
-          topologyKey: "kubernetes.io/zone"
+          topologyKey: "topology.kubernetes.io/zone"
           whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
@@ -377,7 +377,7 @@ spec:
             matchLabels:
               app: nginx
         - maxSkew: 1
-          topologyKey: "kubernetes.io/zone"
+          topologyKey: "topology.kubernetes.io/zone"
           whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
