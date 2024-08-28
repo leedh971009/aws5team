@@ -33,10 +33,10 @@ spec:
                   operator: In
                   values:
                   - tomcat
-                 - key: name
+                - key: name
                   operator: In
                   values:
-                  - index  
+                  - index    
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
@@ -109,10 +109,10 @@ spec:
                   operator: In
                   values:
                   - tomcat
-                 - key: name
+                - key: name
                   operator: In
                   values:
-                  - login  
+                  - login   
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
