@@ -45,7 +45,14 @@ spec:
         labelSelector:
           matchLabels:
             app: nginx
-            name: index        
+            name: index
+      - maxSkew: 1
+          topologyKey: "topology.kubernetes.io/zone"
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              app: nginx
+              name: index              
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-index:v2.0
         name: index
@@ -122,7 +129,14 @@ spec:
           labelSelector:
             matchLabels:
               app: nginx
-              name: login         
+              name: login
+        - maxSkew: 1
+          topologyKey: "topology.kubernetes.io/zone"
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              app: nginx
+              name: login               
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-login:v2.0
         name: login
@@ -200,7 +214,14 @@ spec:
           labelSelector:
             matchLabels:
               app: nginx
-              name: join         
+              name: join
+        - maxSkew: 1
+          topologyKey: "topology.kubernetes.io/zone"
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              app: nginx
+              name: join               
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-join:v2.0
         name: join
@@ -278,7 +299,14 @@ spec:
           labelSelector:
             matchLabels:
               app: nginx
-              name: contents         
+              name: contents
+        - maxSkew: 1
+          topologyKey: "topology.kubernetes.io/zone"
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              app: nginx
+              name: contents               
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-contents:v2.0
         name: contents
@@ -356,7 +384,14 @@ spec:
           labelSelector:
             matchLabels:
               app: nginx
-              name: mypage         
+              name: mypage
+        - maxSkew: 1
+          topologyKey: "topology.kubernetes.io/zone"
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              app: nginx
+              name: mypage               
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-mypage:v2.0
         name: mypage
