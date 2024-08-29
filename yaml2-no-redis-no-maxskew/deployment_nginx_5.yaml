@@ -45,7 +45,6 @@ spec:
           labelSelector:
             matchLabels:
               app: nginx
-              name: index
         - maxSkew: 1
           topologyKey: "kubernetes.io/hostname"
           whenUnsatisfiable: DoNotSchedule
@@ -128,7 +127,6 @@ spec:
           labelSelector:
             matchLabels:
               app: nginx
-              name: login
         - maxSkew: 1
           topologyKey: "kubernetes.io/hostname"
           whenUnsatisfiable: DoNotSchedule
@@ -212,7 +210,6 @@ spec:
           labelSelector:
             matchLabels:
               app: nginx
-              name: join
         - maxSkew: 1
           topologyKey: "kubernetes.io/hostname"
           whenUnsatisfiable: DoNotSchedule
@@ -296,7 +293,6 @@ spec:
           labelSelector:
             matchLabels:
               app: nginx
-              name: contents
         - maxSkew: 1
           topologyKey: "kubernetes.io/hostname"
           whenUnsatisfiable: DoNotSchedule
@@ -380,7 +376,6 @@ spec:
           labelSelector:
             matchLabels:
               app: nginx
-              name: mypage
         - maxSkew: 1
           topologyKey: "kubernetes.io/hostname"
           whenUnsatisfiable: DoNotSchedule
