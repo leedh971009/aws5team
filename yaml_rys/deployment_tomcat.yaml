@@ -45,10 +45,7 @@ spec:
       - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-index:v5.0
         name: tomcat-index-deploy
         ports:
-        - containerPort: 8080
-        volumeMounts:
-        - mountPath: "/opt/tomcat/webapps/ROOT/data"
-          name: html
+        - containerPort: 8080l
         resources:
           limits:
             cpu: 200m
@@ -115,9 +112,6 @@ spec:
         name: tomcat-login-deploy
         ports:
         - containerPort: 8080
-        volumeMounts:
-        - mountPath: "/opt/tomcat/webapps/ROOT/data"
-          name: html
         resources:
           limits:
             cpu: 200m
@@ -184,9 +178,6 @@ spec:
         name: tomcat-join-deploy
         ports:
         - containerPort: 8080
-        volumeMounts:
-        - mountPath: "/opt/tomcat/webapps/ROOT/data"
-          name: html
         resources:
           limits:
             cpu: 200m
@@ -254,9 +245,6 @@ spec:
         name: tomcat-contents-deploy
         ports:
         - containerPort: 8080
-        volumeMounts:
-        - mountPath: "/opt/tomcat/webapps/ROOT/data"
-          name: html
         resources:
           limits:
             cpu: 200m
@@ -323,9 +311,6 @@ spec:
         name: tomcat-mypage-deploy
         ports:
         - containerPort: 8080
-        volumeMounts:
-        - mountPath: "/opt/tomcat/webapps/ROOT/data"
-          name: html
         resources:
           limits:
             cpu: 200m
