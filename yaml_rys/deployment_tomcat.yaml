@@ -65,10 +65,7 @@ spec:
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
-      volumes:
-        - name: html
-          persistentVolumeClaim:
-            claimName: pvc-tomcat
+
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -137,10 +134,7 @@ spec:
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
-      volumes:
-        - name: html
-          persistentVolumeClaim:
-            claimName: pvc-tomcat
+
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -209,10 +203,7 @@ spec:
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
-      volumes:
-        - name: html
-          persistentVolumeClaim:
-            claimName: pvc-tomcat
+
 
 ---
 apiVersion: apps/v1
@@ -282,10 +273,7 @@ spec:
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
-      volumes:
-        - name: html
-          persistentVolumeClaim:
-            claimName: pvc-tomcat
+
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -354,8 +342,4 @@ spec:
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
-      volumes:
-        - name: html
-          persistentVolumeClaim:
-            claimName: pvc-tomcat
           
