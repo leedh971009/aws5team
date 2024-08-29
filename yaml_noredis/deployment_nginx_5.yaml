@@ -25,22 +25,27 @@ spec:
       affinity:
         podAntiAffinity: 
           preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 50
+          - weight: 100
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
-                - key: nginx
+                - key: app
                   operator: In
                   values:
                   - nginx
-              topologyKey: topology.kubernetes.io/zone
+                - key: name
+                  operator: In
+                  values:
+                  - index
+              topologyKey: "topology.kubernetes.io/zone"
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: kubernetes.io/hostname
-          whenUnsatisfiable: ScheduleAnyway
+          topologyKey: "topology.kubernetes.io/zone"
+          whenUnsatisfiable: DoNotSchedule
           labelSelector:
             matchLabels:
               app: nginx
+              name: index                      
       containers:
       - image: 381492076830.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-index:v1.0
         name: index
@@ -97,22 +102,27 @@ spec:
       affinity:
         podAntiAffinity: 
           preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 50
+          - weight: 100
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
-                - key: nginx
+                - key: app
                   operator: In
                   values:
                   - nginx
+                - key: name
+                  operator: In
+                  values:
+                  - login
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: kubernetes.io/hostname
-          whenUnsatisfiable: ScheduleAnyway
+          topologyKey: "topology.kubernetes.io/zone"
+          whenUnsatisfiable: DoNotSchedule
           labelSelector:
             matchLabels:
               app: nginx
+              name: login                 
       containers:
       - image: 381492076830.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-login:v1.0
         name: login
@@ -126,8 +136,8 @@ spec:
             cpu: 200m
             memory: 250Mi
           requests:
-            cpu: 200m
-            memory: 250Mi
+            cpu: 100m
+            memory: 150Mi
         livenessProbe:
           httpGet:
             path: /login.jsp
@@ -170,22 +180,27 @@ spec:
       affinity:
         podAntiAffinity: 
           preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 50
+          - weight: 100
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
-                - key: nginx
+                - key: app
                   operator: In
                   values:
                   - nginx
+                - key: name
+                  operator: In
+                  values:
+                  - join
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: kubernetes.io/hostname
-          whenUnsatisfiable: ScheduleAnyway
+          topologyKey: "topology.kubernetes.io/zone"
+          whenUnsatisfiable: DoNotSchedule
           labelSelector:
             matchLabels:
               app: nginx
+              name: join               
       containers:
       - image: 381492076830.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-join:v1.0
         name: join
@@ -199,8 +214,8 @@ spec:
             cpu: 200m
             memory: 250Mi
           requests:
-            cpu: 200m
-            memory: 250Mi
+            cpu: 100m
+            memory: 150Mi
         livenessProbe:
           httpGet:
             path: /join.jsp
@@ -243,22 +258,27 @@ spec:
       affinity:
         podAntiAffinity: 
           preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 50
+          - weight: 100
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
-                - key: nginx
+                - key: app
                   operator: In
                   values:
                   - nginx
-              topologyKey: topology.kubernetes.io/zone
+                - key: name
+                  operator: In
+                  values:
+                  - contents
+              topologyKey: topology.kubernetes.io/zone 
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: kubernetes.io/hostname
-          whenUnsatisfiable: ScheduleAnyway
+          topologyKey: "topology.kubernetes.io/zone"
+          whenUnsatisfiable: DoNotSchedule
           labelSelector:
             matchLabels:
               app: nginx
+              name: contents               
       containers:
       - image: 381492076830.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-contents:v1.0
         name: contents
@@ -316,22 +336,27 @@ spec:
       affinity:
         podAntiAffinity: 
           preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 50
+          - weight: 100
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
-                - key: nginx
+                - key: app
                   operator: In
                   values:
                   - nginx
+                - key: name
+                  operator: In
+                  values:
+                  - mypage
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: kubernetes.io/hostname
-          whenUnsatisfiable: ScheduleAnyway
+          topologyKey: "topology.kubernetes.io/zone"
+          whenUnsatisfiable: DoNotSchedule
           labelSelector:
             matchLabels:
               app: nginx
+              name: mypage                       
       containers:
       - image: 381492076830.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-mypage:v1.0
         name: mypage
@@ -345,8 +370,8 @@ spec:
             cpu: 200m
             memory: 250Mi
           requests:
-            cpu: 200m
-            memory: 250Mi
+            cpu: 100m
+            memory: 150Mi
         livenessProbe:
           httpGet:
             path: /mypage.jsp

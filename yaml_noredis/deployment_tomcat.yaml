@@ -23,20 +23,33 @@ spec:
         name: index
     spec:
       affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - nginx
+              - key: name
+                operator: In
+                values:
+                - index
+            topologyKey: "kubernetes.io/hostname"
+            namespaces:
+            - nginx
         podAntiAffinity: 
-          preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 50
-            podAffinityTerm:
-              labelSelector:
-                matchExpressions:
-                - key: nginx
-                  operator: In
-                  values:
-                  - nginx
-              topologyKey: topology.kubernetes.io/zone
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: name
+                operator: In
+                values:
+                - index  
+            topologyKey: "kubernetes.io/hostname"    
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: kubernetes.io/hostname
+          topologyKey: "kubernetes.io/hostname"
           whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
@@ -95,20 +108,33 @@ spec:
         name: login
     spec:
       affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - nginx
+              - key: name
+                operator: In
+                values:
+                - login
+            topologyKey: "kubernetes.io/hostname"
+            namespaces:
+            - nginx
         podAntiAffinity: 
-          preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 50
-            podAffinityTerm:
-              labelSelector:
-                matchExpressions:
-                - key: nginx
-                  operator: In
-                  values:
-                  - nginx
-              topologyKey: topology.kubernetes.io/zone
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: name
+                operator: In
+                values:
+                - login  
+            topologyKey: "kubernetes.io/hostname"    
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: kubernetes.io/hostname
+          topologyKey: "kubernetes.io/hostname"
           whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
@@ -126,8 +152,8 @@ spec:
             cpu: 200m
             memory: 250Mi
           requests:
-            cpu: 200m
-            memory: 250Mi
+            cpu: 100m
+            memory: 150Mi
         livenessProbe:
           httpGet:
             path: /login.jsp
@@ -167,20 +193,33 @@ spec:
         name: join
     spec:
       affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - nginx
+              - key: name
+                operator: In
+                values:
+                - join
+            topologyKey: "kubernetes.io/hostname"
+            namespaces:
+            - nginx
         podAntiAffinity: 
-          preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 50
-            podAffinityTerm:
-              labelSelector:
-                matchExpressions:
-                - key: nginx
-                  operator: In
-                  values:
-                  - nginx
-              topologyKey: topology.kubernetes.io/zone
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: name
+                operator: In
+                values:
+                - join  
+            topologyKey: "kubernetes.io/hostname"   
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: kubernetes.io/hostname
+          topologyKey: "kubernetes.io/hostname"
           whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
@@ -198,8 +237,8 @@ spec:
             cpu: 200m
             memory: 250Mi
           requests:
-            cpu: 200m
-            memory: 250Mi
+            cpu: 100m
+            memory: 150Mi
         livenessProbe:
           httpGet:
             path: /join.jsp
@@ -240,20 +279,33 @@ spec:
         name: contents
     spec:
       affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - nginx
+              - key: name
+                operator: In
+                values:
+                - contents
+            topologyKey: "kubernetes.io/hostname"
+            namespaces:
+            - nginx
         podAntiAffinity: 
-          preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 50
-            podAffinityTerm:
-              labelSelector:
-                matchExpressions:
-                - key: nginx
-                  operator: In
-                  values:
-                  - nginx
-              topologyKey: topology.kubernetes.io/zone
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: name
+                operator: In
+                values:
+                - contents  
+            topologyKey: "kubernetes.io/hostname"    
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: kubernetes.io/hostname
+          topologyKey: "kubernetes.io/hostname"
           whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
@@ -312,20 +364,33 @@ spec:
         name: mypage
     spec:
       affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - nginx
+              - key: name
+                operator: In
+                values:
+                - mypage
+            topologyKey: "kubernetes.io/hostname"
+            namespaces:
+            - nginx
         podAntiAffinity: 
-          preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 50
-            podAffinityTerm:
-              labelSelector:
-                matchExpressions:
-                - key: nginx
-                  operator: In
-                  values:
-                  - nginx
-              topologyKey: topology.kubernetes.io/zone
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: name
+                operator: In
+                values:
+                - mypage  
+            topologyKey: "kubernetes.io/hostname"    
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: kubernetes.io/hostname
+          topologyKey: "kubernetes.io/hostname"
           whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
@@ -343,8 +408,8 @@ spec:
             cpu: 200m
             memory: 250Mi
           requests:
-            cpu: 200m
-            memory: 250Mi
+            cpu: 100m
+            memory: 150Mi
         livenessProbe:
           httpGet:
             path: /mypage.jsp
@@ -359,5 +424,3 @@ spec:
           persistentVolumeClaim:
             claimName: pvc-tomcat
           
-
-
