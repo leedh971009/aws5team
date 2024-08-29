@@ -36,11 +36,7 @@ spec:
                 - key: name
                   operator: In
                   values:
-                  - index
-                - key: name
-                  operator: In
-                  values:
-                  - join    
+                  - index  
               topologyKey: "topology.kubernetes.io/zone"
       topologySpreadConstraints:
         - maxSkew: 1
@@ -52,7 +48,7 @@ spec:
               name: index
         - maxSkew: 1
           topologyKey: "kubernetes.io/hostname"
-          whenUnsatisfiable: DoNotSchedule
+          whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
               app: nginx
@@ -124,11 +120,7 @@ spec:
                 - key: name
                   operator: In
                   values:
-                  - login
-                - key: name
-                  operator: In
-                  values:
-                  - join  
+                  - login  
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
@@ -140,7 +132,7 @@ spec:
               name: login
         - maxSkew: 1
           topologyKey: "kubernetes.io/hostname"
-          whenUnsatisfiable: DoNotSchedule
+          whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
               app: nginx
@@ -225,7 +217,7 @@ spec:
               name: join
         - maxSkew: 1
           topologyKey: "kubernetes.io/hostname"
-          whenUnsatisfiable: DoNotSchedule
+          whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
               app: nginx
@@ -298,11 +290,7 @@ spec:
                 - key: name
                   operator: In
                   values:
-                  - contents
-                - key: name
-                  operator: In
-                  values:
-                  - index  
+                  - contents  
               topologyKey: topology.kubernetes.io/zone 
       topologySpreadConstraints:
         - maxSkew: 1
@@ -314,7 +302,7 @@ spec:
               name: contents
         - maxSkew: 1
           topologyKey: "kubernetes.io/hostname"
-          whenUnsatisfiable: DoNotSchedule
+          whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
               app: nginx
@@ -387,11 +375,7 @@ spec:
                 - key: name
                   operator: In
                   values:
-                  - mypage
-                - key: name
-                  operator: In
-                  values:
-                  - login  
+                  - mypage  
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
@@ -403,7 +387,7 @@ spec:
               name: mypage
         - maxSkew: 1
           topologyKey: "kubernetes.io/hostname"
-          whenUnsatisfiable: DoNotSchedule
+          whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
               app: nginx
