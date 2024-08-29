@@ -37,21 +37,7 @@ spec:
                   operator: In
                   values:
                   - index  
-              topologyKey: "topology.kubernetes.io/zone"
-      topologySpreadConstraints:
-        - maxSkew: 1
-          topologyKey: "kubernetes.io/hostname"
-          whenUnsatisfiable: DoNotSchedule
-          labelSelector:
-            matchLabels:
-              app: nginx
-              name: index
-        - maxSkew: 1
-          topologyKey: "topology.kubernetes.io/zone"
-          whenUnsatisfiable: DoNotSchedule
-          labelSelector:
-            matchLabels:
-              app: nginx                 
+              topologyKey: "topology.kubernetes.io/zone"                
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-index:v2.0
         name: index
@@ -120,21 +106,7 @@ spec:
                   operator: In
                   values:
                   - login  
-              topologyKey: topology.kubernetes.io/zone
-      topologySpreadConstraints:
-        - maxSkew: 1
-          topologyKey: "kubernetes.io/hostname"
-          whenUnsatisfiable: DoNotSchedule
-          labelSelector:
-            matchLabels:
-              app: nginx
-              name: login
-        - maxSkew: 1
-          topologyKey: "topology.kubernetes.io/zone"
-          whenUnsatisfiable: DoNotSchedule
-          labelSelector:
-            matchLabels:
-              app: nginx                 
+              topologyKey: topology.kubernetes.io/zone                
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-login:v2.0
         name: login
@@ -204,21 +176,7 @@ spec:
                   operator: In
                   values:
                   - join
-              topologyKey: topology.kubernetes.io/zone
-      topologySpreadConstraints:
-        - maxSkew: 1
-          topologyKey: "kubernetes.io/hostname"
-          whenUnsatisfiable: DoNotSchedule
-          labelSelector:
-            matchLabels:
-              app: nginx
-              name: join
-        - maxSkew: 1
-          topologyKey: "topology.kubernetes.io/zone"
-          whenUnsatisfiable: DoNotSchedule
-          labelSelector:
-            matchLabels:
-              app: nginx      
+              topologyKey: topology.kubernetes.io/zone     
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-join:v2.0
         name: join
@@ -288,21 +246,7 @@ spec:
                   operator: In
                   values:
                   - contents  
-              topologyKey: topology.kubernetes.io/zone 
-      topologySpreadConstraints:
-        - maxSkew: 1
-          topologyKey: "kubernetes.io/hostname"
-          whenUnsatisfiable: DoNotSchedule
-          labelSelector:
-            matchLabels:
-              app: nginx
-              name: contents
-        - maxSkew: 1
-          topologyKey: "topology.kubernetes.io/zone"
-          whenUnsatisfiable: DoNotSchedule
-          labelSelector:
-            matchLabels:
-              app: nginx            
+              topologyKey: topology.kubernetes.io/zone             
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-contents:v2.0
         name: contents
@@ -372,21 +316,7 @@ spec:
                   operator: In
                   values:
                   - mypage  
-              topologyKey: topology.kubernetes.io/zone
-      topologySpreadConstraints:
-        - maxSkew: 1
-          topologyKey: "kubernetes.io/hostname"
-          whenUnsatisfiable: DoNotSchedule
-          labelSelector:
-            matchLabels:
-              app: nginx
-              name: mypage
-        - maxSkew: 1
-          topologyKey: "topology.kubernetes.io/zone"
-          whenUnsatisfiable: DoNotSchedule
-          labelSelector:
-            matchLabels:
-              app: nginx                                 
+              topologyKey: topology.kubernetes.io/zone                                 
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-mypage:v2.0
         name: mypage
