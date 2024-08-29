@@ -36,7 +36,11 @@ spec:
                 - key: name
                   operator: In
                   values:
-                  - index  
+                  - index
+                - key: name
+                  operator: In
+                  values:
+                  - join    
               topologyKey: "topology.kubernetes.io/zone"
       topologySpreadConstraints:
         - maxSkew: 1
@@ -384,6 +388,10 @@ spec:
                   operator: In
                   values:
                   - mypage
+                - key: name
+                  operator: In
+                  values:
+                  - login  
               topologyKey: topology.kubernetes.io/zone
       topologySpreadConstraints:
         - maxSkew: 1
