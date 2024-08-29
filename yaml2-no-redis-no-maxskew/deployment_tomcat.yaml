@@ -23,30 +23,36 @@ spec:
         name: index
     spec:
       affinity:
-        podAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: app
-                operator: In
-                values:
-                - nginx
-              - key: name
-                operator: In
-                values:
-                - index
-            topologyKey: "kubernetes.io/hostname"
-            namespaces:
-            - nginx
         podAntiAffinity: 
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: name
-                operator: In
-                values:
-                - index  
-            topologyKey: "kubernetes.io/hostname"    
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - tomcat
+                - key: name
+                  operator: In
+                  values:
+                  - index  
+              topologyKey: "topology.kubernetes.io/zone"
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: "kubernetes.io/hostname"
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              app: tomcat
+              name: index
+        - maxSkew: 1
+          topologyKey: "topology.kubernetes.io/zone"
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              app: tomcat
+              name: index    
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-index:v1.0
         name: tomcat-index-deploy
@@ -101,30 +107,36 @@ spec:
         name: login
     spec:
       affinity:
-        podAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: app
-                operator: In
-                values:
-                - nginx
-              - key: name
-                operator: In
-                values:
-                - login
-            topologyKey: "kubernetes.io/hostname"
-            namespaces:
-            - nginx
         podAntiAffinity: 
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: name
-                operator: In
-                values:
-                - login  
-            topologyKey: "kubernetes.io/hostname"    
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - tomcat
+                - key: name
+                  operator: In
+                  values:
+                  - login  
+              topologyKey: topology.kubernetes.io/zone
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: "kubernetes.io/hostname"
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              app: tomcat
+              name: login
+        - maxSkew: 1
+          topologyKey: "topology.kubernetes.io/zone"
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              app: tomcat
+              name: login    
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-login:v1.0
         name: tomcat-login-deploy
@@ -179,30 +191,36 @@ spec:
         name: join
     spec:
       affinity:
-        podAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: app
-                operator: In
-                values:
-                - nginx
-              - key: name
-                operator: In
-                values:
-                - join
-            topologyKey: "kubernetes.io/hostname"
-            namespaces:
-            - nginx
         podAntiAffinity: 
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: name
-                operator: In
-                values:
-                - join  
-            topologyKey: "kubernetes.io/hostname"   
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - tomcat
+                - key: name
+                  operator: In
+                  values:
+                  - join
+              topologyKey: topology.kubernetes.io/zone
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: "kubernetes.io/hostname"
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              app: tomcat
+              name: join
+        - maxSkew: 1
+          topologyKey: "topology.kubernetes.io/zone"
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              app: tomcat
+              name: join   
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-join:v1.0
         name: tomcat-join-deploy
@@ -258,30 +276,37 @@ spec:
         name: contents
     spec:
       affinity:
-        podAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: app
-                operator: In
-                values:
-                - nginx
-              - key: name
-                operator: In
-                values:
-                - contents
-            topologyKey: "kubernetes.io/hostname"
-            namespaces:
-            - nginx
         podAntiAffinity: 
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: name
-                operator: In
-                values:
-                - contents  
-            topologyKey: "kubernetes.io/hostname"    
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - tomcat
+                - key: name
+                  operator: In
+                  values:
+                  - contents  
+              topologyKey: topology.kubernetes.io/zone 
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: "kubernetes.io/hostname"
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              app: tomcat
+              name: contents
+        - maxSkew: 1
+          topologyKey: "topology.kubernetes.io/zone"
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              app: tomcat
+              name: contents
+          
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-contents:v1.0
         name: tomcat-contents-deploy
@@ -336,30 +361,37 @@ spec:
         name: mypage
     spec:
       affinity:
-        podAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: app
-                operator: In
-                values:
-                - nginx
-              - key: name
-                operator: In
-                values:
-                - mypage
-            topologyKey: "kubernetes.io/hostname"
-            namespaces:
-            - nginx
         podAntiAffinity: 
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: name
-                operator: In
-                values:
-                - mypage  
-            topologyKey: "kubernetes.io/hostname"    
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - tomcat
+                - key: name
+                  operator: In
+                  values:
+                  - mypage  
+              topologyKey: topology.kubernetes.io/zone
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: "kubernetes.io/hostname"
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              app: tomcat
+              name: mypage
+        - maxSkew: 1
+          topologyKey: "topology.kubernetes.io/zone"
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              app: tomcat
+              name: mypage
+          
       containers:
       - image: 381492042252.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-mypage:v1.0
         name: tomcat-mypage-deploy
