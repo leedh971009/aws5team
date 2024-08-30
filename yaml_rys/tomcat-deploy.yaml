@@ -53,15 +53,7 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
-        livenessProbe:
-          httpGet:
-            path: /
-            port: 8080
-          initialDelaySeconds: 15
-          periodSeconds: 60
-          timeoutSeconds: 60
-          successThreshold: 1
-          failureThreshold: 3
+
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -118,15 +110,7 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
-        livenessProbe:
-          httpGet:
-            path: /login.jsp
-            port: 8080
-          initialDelaySeconds: 15
-          periodSeconds: 60
-          timeoutSeconds: 60
-          successThreshold: 1
-          failureThreshold: 3
+
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -183,15 +167,6 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
-        livenessProbe:
-          httpGet:
-            path: /join.jsp
-            port: 8080
-          initialDelaySeconds: 15
-          periodSeconds: 60
-          timeoutSeconds: 60
-          successThreshold: 1
-          failureThreshold: 3
 
 ---
 apiVersion: apps/v1
@@ -249,15 +224,6 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
-        livenessProbe:
-          httpGet:
-            path: /contents.jsp
-            port: 8080
-          initialDelaySeconds: 15
-          periodSeconds: 60
-          timeoutSeconds: 60
-          successThreshold: 1
-          failureThreshold: 3
 
 ---
 apiVersion: apps/v1
@@ -315,12 +281,4 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
-        livenessProbe:
-          httpGet:
-            path: /mypage.jsp
-            port: 8080
-          initialDelaySeconds: 15
-          periodSeconds: 60
-          timeoutSeconds: 60
-          successThreshold: 1
-          failureThreshold: 3
+
