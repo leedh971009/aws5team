@@ -42,7 +42,7 @@ spec:
             matchLabels:
               app: nginx
       containers:
-      - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-index:v5.0
+      - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-index:v6.0
         name: index
         command: ["nginx", "-g", "daemon off;"]
         ports:
@@ -109,7 +109,7 @@ spec:
             matchLabels:
               app: nginx
       containers:
-      - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-login:v5.0
+      - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-login:v6.0
         name: login
         command: ["nginx", "-g", "daemon off;"]
         ports:
@@ -176,7 +176,7 @@ spec:
             matchLabels:
               app: nginx
       containers:
-      - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-join:v5.0
+      - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-join:v6.0
         name: join
         command: ["nginx", "-g", "daemon off;"]
         ports:
@@ -243,7 +243,7 @@ spec:
             matchLabels:
               app: nginx
       containers:
-      - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-contents:v5.0
+      - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-contents:v6.0
         name: contents
         command: ["nginx", "-g", "daemon off;"]
         ports:
@@ -310,7 +310,7 @@ spec:
             matchLabels:
               app: nginx
       containers:
-      - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-mypage:v5.0
+      - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-mypage:v6.0
         name: mypage
         command: ["nginx", "-g", "daemon off;"]
         ports:
