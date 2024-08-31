@@ -13,7 +13,7 @@ spec:
   storageClassName: hf-efs-sc
   csi:
     driver: efs.csi.aws.com
-    volumeHandle: fs-059f61efc6e398c7e
+    volumeHandle: fs-0508a1cde1434d924
 
 ---
 apiVersion: v1
@@ -31,4 +31,4 @@ spec:
   storageClassName: hf-efs-sc
   csi:
     driver: efs.csi.aws.com
-    volumeHandle: fs-059f61efc6e398c7e
+    volumeHandle: fs-0508a1cde1434d924
