@@ -57,9 +57,10 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
-        readinessProbe:
-          tcpSocket:
-            port: 80
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
           initialDelaySeconds: 15
           periodSeconds: 20
           timeoutSeconds: 1
@@ -129,9 +130,10 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
-        readinessProbe:
-          tcpSocket:
-            port: 80
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
           initialDelaySeconds: 15
           periodSeconds: 20
           timeoutSeconds: 1
@@ -201,9 +203,10 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
-        readinessProbe:
-          tcpSocket:
-            port: 80
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
           initialDelaySeconds: 15
           periodSeconds: 20
           timeoutSeconds: 1
@@ -274,9 +277,10 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
-        readinessProbe:
-          tcpSocket:
-            port: 80
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
           initialDelaySeconds: 15
           periodSeconds: 20
           timeoutSeconds: 1
@@ -346,14 +350,15 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
-        readinessProbe:
-          tcpSocket:
-            port: 80
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
           initialDelaySeconds: 15
           periodSeconds: 20
           timeoutSeconds: 1
           successThreshold: 1
-          failureThreshold: 33
+          failureThreshold: 3
       volumes:
         - name: html
           persistentVolumeClaim:
