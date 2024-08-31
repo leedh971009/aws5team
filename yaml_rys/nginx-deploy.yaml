@@ -54,6 +54,15 @@ spec:
             cpu: 200m
             memory: 250Mi
         livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 15
+          periodSeconds: 20
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
+        readinessProbe:
           tcpSocket:
             port: 80
           initialDelaySeconds: 15
@@ -119,6 +128,15 @@ spec:
             cpu: 200m
             memory: 250Mi
         livenessProbe:
+          httpGet:
+            path: /login.jsp
+            port: 80
+          initialDelaySeconds: 15
+          periodSeconds: 20
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
+        readinessProbe:
           tcpSocket:
             port: 80
           initialDelaySeconds: 15
@@ -184,6 +202,15 @@ spec:
             cpu: 200m
             memory: 250Mi
         livenessProbe:
+          httpGet:
+            path: /join.jsp
+            port: 80
+          initialDelaySeconds: 15
+          periodSeconds: 20
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
+        readinessProbe:
           tcpSocket:
             port: 80
           initialDelaySeconds: 15
@@ -249,6 +276,15 @@ spec:
             cpu: 200m
             memory: 250Mi
         livenessProbe:
+          httpGet:
+            path: /contents.jsp
+            port: 80
+          initialDelaySeconds: 15
+          periodSeconds: 20
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
+        readinessProbe:
           tcpSocket:
             port: 80
           initialDelaySeconds: 15
@@ -314,10 +350,19 @@ spec:
             cpu: 200m
             memory: 250Mi
         livenessProbe:
+          httpGet:
+            path: /mypage.jsp
+            port: 80
+          initialDelaySeconds: 15
+          periodSeconds: 20
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
+        readinessProbe:
           tcpSocket:
             port: 80
           initialDelaySeconds: 15
           periodSeconds: 20
           timeoutSeconds: 1
           successThreshold: 1
-          failureThreshold: 33
+          failureThreshold: 3
