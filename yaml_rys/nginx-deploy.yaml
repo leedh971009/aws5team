@@ -44,7 +44,6 @@ spec:
       containers:
       - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-index:v6.0
         name: index
-        command: ["nginx", "-g", "daemon off;"]
         ports:
         - containerPort: 80
         resources:
@@ -111,7 +110,6 @@ spec:
       containers:
       - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-login:v6.0
         name: login
-        command: ["nginx", "-g", "daemon off;"]
         ports:
         - containerPort: 80
         resources:
@@ -178,7 +176,6 @@ spec:
       containers:
       - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-join:v6.0
         name: join
-        command: ["nginx", "-g", "daemon off;"]
         ports:
         - containerPort: 80
         resources:
@@ -245,7 +242,6 @@ spec:
       containers:
       - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-contents:v6.0
         name: contents
-        command: ["nginx", "-g", "daemon off;"]
         ports:
         - containerPort: 80
         resources:
@@ -312,7 +308,6 @@ spec:
       containers:
       - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-mypage:v6.0
         name: mypage
-        command: ["nginx", "-g", "daemon off;"]
         ports:
         - containerPort: 80
         resources:
