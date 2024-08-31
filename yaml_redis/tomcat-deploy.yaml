@@ -56,6 +56,18 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          exec:
+            - cat
+            - /tmp/healthy
+          initialDelaySeconds: 15
+          periodSeconds: 20
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
       volumes:
         - name: html
           persistentVolumeClaim:
@@ -119,6 +131,18 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
+        readinessProbe:
+          httpGet:
+            path: /login.jsp
+            port: 8080
+          exec:
+            - cat
+            - /tmp/healthy
+          initialDelaySeconds: 15
+          periodSeconds: 20
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
       volumes:
         - name: html
           persistentVolumeClaim:
@@ -182,6 +206,18 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
+        readinessProbe:
+          httpGet:
+            path: /join.jsp
+            port: 80
+          exec:
+            - cat
+            - /tmp/healthy
+          initialDelaySeconds: 15
+          periodSeconds: 20
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
       volumes:
         - name: html
           persistentVolumeClaim:
@@ -246,6 +282,18 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
+        readinessProbe:
+          httpGet:
+            path: /contents.jsp
+            port: 80
+          exec:
+            - cat
+            - /tmp/healthy
+          initialDelaySeconds: 15
+          periodSeconds: 20
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
       volumes:
         - name: html
           persistentVolumeClaim:
@@ -309,6 +357,18 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
+        readinessProbe:
+          httpGet:
+            path: /mypage.jsp
+            port: 80
+          exec:
+            - cat
+            - /tmp/healthy
+          initialDelaySeconds: 15
+          periodSeconds: 20
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
       volumes:
         - name: html
           persistentVolumeClaim:
