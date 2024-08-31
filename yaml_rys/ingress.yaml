@@ -51,7 +51,6 @@ spec:
             name: mypage-service
             port:
               number: 80
-  rules:
   - host: www.youngsu.shop
     http: 
       paths:
