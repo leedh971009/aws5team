@@ -57,8 +57,9 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
-        readinessProbe:
-          tcpSocket:
+        livenessProbe:
+          httpGet:
+            path: /
             port: 80
           initialDelaySeconds: 15
           periodSeconds: 20
@@ -129,8 +130,9 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
-        readinessProbe:
-          tcpSocket:
+        livenessProbe:
+          httpGet:
+            path: /login.jsp
             port: 80
           initialDelaySeconds: 15
           periodSeconds: 20
@@ -202,8 +204,9 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
-        readinessProbe:
-          tcpSocket:
+        livenessProbe:
+          httpGet:
+            path: /join.jsp
             port: 80
           initialDelaySeconds: 15
           periodSeconds: 20
@@ -275,8 +278,9 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
-        readinessProbe:
-          tcpSocket:
+        livenessProbe:
+          httpGet:
+            path: /contents.jsp
             port: 80
           initialDelaySeconds: 15
           periodSeconds: 20
@@ -348,8 +352,9 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
-        readinessProbe:
-          tcpSocket:
+        livenessProbe:
+          httpGet:
+            path: /mypage.jsp
             port: 80
           initialDelaySeconds: 15
           periodSeconds: 20
