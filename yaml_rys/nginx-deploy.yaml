@@ -53,10 +53,9 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
-        readinessProbe:
-          exec:
-            - cat
-            - /tmp/healthy
+        livenessProbe:
+          tcpSocket:
+            port: 80
           initialDelaySeconds: 15
           periodSeconds: 20
           timeoutSeconds: 1
@@ -119,10 +118,9 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
-        readinessProbe:
-          exec:
-            - cat
-            - /tmp/healthy
+        livenessProbe:
+          tcpSocket:
+            port: 80
           initialDelaySeconds: 15
           periodSeconds: 20
           timeoutSeconds: 1
@@ -185,10 +183,9 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
-        readinessProbe:
-          exec:
-            - cat
-            - /tmp/healthy
+        livenessProbe:
+          tcpSocket:
+            port: 80
           initialDelaySeconds: 15
           periodSeconds: 20
           timeoutSeconds: 1
@@ -251,10 +248,9 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
-        readinessProbe:
-          exec:
-            - cat
-            - /tmp/healthy
+        livenessProbe:
+          tcpSocket:
+            port: 80
           initialDelaySeconds: 15
           periodSeconds: 20
           timeoutSeconds: 1
@@ -317,12 +313,11 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
-        readinessProbe:
-          exec:
-            - cat
-            - /tmp/healthy
+        livenessProbe:
+          tcpSocket:
+            port: 80
           initialDelaySeconds: 15
           periodSeconds: 20
           timeoutSeconds: 1
           successThreshold: 1
-          failureThreshold: 3
+          failureThreshold: 33
