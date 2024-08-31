@@ -56,15 +56,7 @@ spec:
             memory: 250Mi
         livenessProbe:
           httpGet:
-            path: /index.jsp
-            port: 80
-          initialDelaySeconds: 15
-          periodSeconds: 20
-          timeoutSeconds: 1
-          successThreshold: 1
-          failureThreshold: 3
-        readinessProbe:
-          tcpSocket:
+            path: /
             port: 80
           initialDelaySeconds: 15
           periodSeconds: 20
@@ -138,14 +130,6 @@ spec:
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
-        readinessProbe:
-          tcpSocket:
-            port: 80
-          initialDelaySeconds: 15
-          periodSeconds: 20
-          timeoutSeconds: 1
-          successThreshold: 1
-          failureThreshold: 3
           
 ---
 apiVersion: apps/v1
@@ -213,15 +197,7 @@ spec:
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
-        readinessProbe:
-          tcpSocket:
-            port: 80
-          initialDelaySeconds: 15
-          periodSeconds: 20
-          timeoutSeconds: 1
-          successThreshold: 1
-          failureThreshold: 3
-
+          
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -288,15 +264,7 @@ spec:
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
-        readinessProbe:
-          tcpSocket:
-            port: 80
-          initialDelaySeconds: 15
-          periodSeconds: 20
-          timeoutSeconds: 1
-          successThreshold: 1
-          failureThreshold: 3
-
+          
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -363,11 +331,4 @@ spec:
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
-        readinessProbe:
-          tcpSocket:
-            port: 80
-          initialDelaySeconds: 15
-          periodSeconds: 20
-          timeoutSeconds: 1
-          successThreshold: 1
-          failureThreshold: 3
+
