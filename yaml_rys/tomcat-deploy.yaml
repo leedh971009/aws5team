@@ -42,7 +42,7 @@ spec:
             matchLabels:
               app: tomcat
       containers:
-      - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-index:v5.0
+      - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-index:v6.0
         name: tomcat-index-deploy
         command: ["/opt/tomcat/bin/catalina.sh", "run"]
         ports:
@@ -109,7 +109,7 @@ spec:
             matchLabels:
               app: tomcat
       containers:
-      - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-login:v5.0
+      - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-login:v6.0
         name: tomcat-login-deploy
         command: ["/opt/tomcat/bin/catalina.sh", "run"]
         ports:
@@ -176,7 +176,7 @@ spec:
             matchLabels:
               app: tomcat
       containers:
-      - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-join:v5.0
+      - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-join:v6.0
         name: tomcat-join-deploy
         command: ["/opt/tomcat/bin/catalina.sh", "run"]
         ports:
@@ -243,7 +243,7 @@ spec:
             matchLabels:
               app: tomcat
       containers:
-      - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-contents:v5.0
+      - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-contents:v6.0
         name: tomcat-contents-deploy
         command: ["/opt/tomcat/bin/catalina.sh", "run"]
         ports:
@@ -310,7 +310,7 @@ spec:
             matchLabels:
               app: tomcat
       containers:
-      - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-mypage:v5.0
+      - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/tomcat-mypage:v6.0
         name: tomcat-mypage-deploy
         command: ["/opt/tomcat/bin/catalina.sh", "run"]
         ports:
