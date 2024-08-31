@@ -56,13 +56,18 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
-        readinessProbe:
+        livenessProbe:
           httpGet:
             path: /
             port: 80
-          exec:
-            - cat
-            - /tmp/healthy
+          initialDelaySeconds: 15
+          periodSeconds: 20
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
+        readinessProbe:
+          tcpSocket:
+            port: 80
           initialDelaySeconds: 15
           periodSeconds: 20
           timeoutSeconds: 1
@@ -131,13 +136,18 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
-        readinessProbe:
+        livenessProbe:
           httpGet:
             path: /login.jsp
             port: 80
-          exec:
-            - cat
-            - /tmp/healthy
+          initialDelaySeconds: 15
+          periodSeconds: 20
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
+        readinessProbe:
+          tcpSocket:
+            port: 80
           initialDelaySeconds: 15
           periodSeconds: 20
           timeoutSeconds: 1
@@ -207,13 +217,18 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
-        readinessProbe:
+        livenessProbe:
           httpGet:
             path: /join.jsp
             port: 80
-          exec:
-            - cat
-            - /tmp/healthy
+          initialDelaySeconds: 15
+          periodSeconds: 20
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
+        readinessProbe:
+          tcpSocket:
+            port: 80
           initialDelaySeconds: 15
           periodSeconds: 20
           timeoutSeconds: 1
@@ -283,13 +298,18 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
-        readinessProbe:
+        livenessProbe:
           httpGet:
-            path: /contents.jsp
+            path: /contents
             port: 80
-          exec:
-            - cat
-            - /tmp/healthy
+          initialDelaySeconds: 15
+          periodSeconds: 20
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
+        readinessProbe:
+          tcpSocket:
+            port: 80
           initialDelaySeconds: 15
           periodSeconds: 20
           timeoutSeconds: 1
@@ -359,13 +379,18 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
-        readinessProbe:
+        livenessProbe:
           httpGet:
             path: /mypage.jsp
             port: 80
-          exec:
-            - cat
-            - /tmp/healthy
+          initialDelaySeconds: 15
+          periodSeconds: 20
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
+        readinessProbe:
+          tcpSocket:
+            port: 80
           initialDelaySeconds: 15
           periodSeconds: 20
           timeoutSeconds: 1
