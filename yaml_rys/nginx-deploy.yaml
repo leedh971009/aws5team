@@ -46,6 +46,9 @@ spec:
         name: index
         ports:
         - containerPort: 80
+        volumeMounts:
+        - mountPath: "/usr/share/nginx/html/data"
+          name: html
         resources:
           limits:
             cpu: 200m
@@ -62,6 +65,10 @@ spec:
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: pvc-nginx
 
 ---
 apiVersion: apps/v1
@@ -112,6 +119,9 @@ spec:
         name: login
         ports:
         - containerPort: 80
+        volumeMounts:
+        - mountPath: "/usr/share/nginx/html/data"
+          name: html
         resources:
           limits:
             cpu: 200m
@@ -121,13 +131,17 @@ spec:
             memory: 250Mi
         livenessProbe:
           httpGet:
-            path: /login.jsp
+            path: /
             port: 80
           initialDelaySeconds: 15
           periodSeconds: 20
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: pvc-nginx
           
 ---
 apiVersion: apps/v1
@@ -178,6 +192,9 @@ spec:
         name: join
         ports:
         - containerPort: 80
+        volumeMounts:
+        - mountPath: "/usr/share/nginx/html/data"
+          name: html
         resources:
           limits:
             cpu: 200m
@@ -187,13 +204,17 @@ spec:
             memory: 250Mi
         livenessProbe:
           httpGet:
-            path: /join.jsp
+            path: /
             port: 80
           initialDelaySeconds: 15
           periodSeconds: 20
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: pvc-nginx
           
 ---
 apiVersion: apps/v1
@@ -244,6 +265,9 @@ spec:
         name: contents
         ports:
         - containerPort: 80
+        volumeMounts:
+        - mountPath: "/usr/share/nginx/html/data"
+          name: html
         resources:
           limits:
             cpu: 200m
@@ -253,13 +277,17 @@ spec:
             memory: 250Mi
         livenessProbe:
           httpGet:
-            path: /contents.jsp
+            path: /
             port: 80
           initialDelaySeconds: 15
           periodSeconds: 20
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: pvc-nginx
           
 ---
 apiVersion: apps/v1
@@ -310,6 +338,9 @@ spec:
         name: mypage
         ports:
         - containerPort: 80
+        volumeMounts:
+        - mountPath: "/usr/share/nginx/html/data"
+          name: html
         resources:
           limits:
             cpu: 200m
@@ -319,11 +350,15 @@ spec:
             memory: 250Mi
         livenessProbe:
           httpGet:
-            path: /mypage.jsp
+            path: /
             port: 80
           initialDelaySeconds: 15
           periodSeconds: 20
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 3
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: pvc-nginx
 
