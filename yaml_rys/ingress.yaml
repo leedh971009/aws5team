@@ -16,7 +16,7 @@ spec:
   - host: www.youngsu.shop
     http: 
       paths:
-      - path: /
+      - path: /index.jsp
         pathType: Prefix
         backend:
           service:
