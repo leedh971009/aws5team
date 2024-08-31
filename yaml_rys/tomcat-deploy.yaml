@@ -53,6 +53,15 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
+        readinessProbe:
+          exec:
+            - cat
+            - /tmp/healthy
+          initialDelaySeconds: 15
+          periodSeconds: 20
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
       
           
 ---
@@ -111,6 +120,15 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
+        readinessProbe:
+          exec:
+            - cat
+            - /tmp/healthy
+          initialDelaySeconds: 15
+          periodSeconds: 20
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
         
           
 ---
@@ -169,6 +187,15 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
+        readinessProbe:
+          exec:
+            - cat
+            - /tmp/healthy
+          initialDelaySeconds: 15
+          periodSeconds: 20
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
         
           
 
@@ -228,6 +255,15 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
+        readinessProbe:
+          exec:
+            - cat
+            - /tmp/healthy
+          initialDelaySeconds: 15
+          periodSeconds: 20
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
         
           
 
@@ -287,5 +323,14 @@ spec:
           requests:
             cpu: 200m
             memory: 250Mi
+        readinessProbe:
+          exec:
+            - cat
+            - /tmp/healthy
+          initialDelaySeconds: 15
+          periodSeconds: 20
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
         
 
