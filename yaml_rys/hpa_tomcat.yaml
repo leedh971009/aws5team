@@ -2,7 +2,7 @@ apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
   name: hpa-index-tomcat
-  namespace: tomcat
+  namespace: default
 spec:
   maxReplicas: 10
   minReplicas: 2
@@ -16,7 +16,7 @@ apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
   name: hpa-login-tomcat
-  namespace: tomcat
+  namespace: default
 spec:
   maxReplicas: 10
   minReplicas: 2
@@ -30,7 +30,7 @@ apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
   name: hpa-join-tomcat
-  namespace: tomcat
+  namespace: default
 spec:
   maxReplicas: 10
   minReplicas: 2
@@ -44,7 +44,7 @@ apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
   name: hpa-contents-tomcat
-  namespace: tomcat
+  namespace: default
 spec:
   maxReplicas: 10
   minReplicas: 2
@@ -58,7 +58,7 @@ apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
   name: hpa-mypage-tomcat
-  namespace: tomcat
+  namespace: default
 spec:
   maxReplicas: 10
   minReplicas: 2
