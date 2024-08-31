@@ -60,12 +60,7 @@ spec:
           exec:
             - cat
             - /tmp/healthy
-          initialDelaySeconds: 15
-          periodSeconds: 20
-          timeoutSeconds: 1
-          successThreshold: 1
-          failureThreshold: 3
-
+          
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -129,12 +124,7 @@ spec:
           exec:
             - cat
             - /tmp/healthy
-          initialDelaySeconds: 15
-          periodSeconds: 20
-          timeoutSeconds: 1
-          successThreshold: 1
-          failureThreshold: 3
-
+          
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -198,11 +188,7 @@ spec:
           exec:
             - cat
             - /tmp/healthy
-          initialDelaySeconds: 15
-          periodSeconds: 20
-          timeoutSeconds: 1
-          successThreshold: 1
-          failureThreshold: 3
+          
 
 ---
 apiVersion: apps/v1
@@ -267,11 +253,7 @@ spec:
           exec:
             - cat
             - /tmp/healthy
-          initialDelaySeconds: 15
-          periodSeconds: 20
-          timeoutSeconds: 1
-          successThreshold: 1
-          failureThreshold: 3
+          
 
 ---
 apiVersion: apps/v1
@@ -336,9 +318,5 @@ spec:
           exec:
             - cat
             - /tmp/healthy
-          initialDelaySeconds: 15
-          periodSeconds: 20
-          timeoutSeconds: 1
-          successThreshold: 1
-          failureThreshold: 3
+          
 
