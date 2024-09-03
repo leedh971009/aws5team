@@ -8,7 +8,7 @@ HttpSession httpSession = request.getSession();
 String userId = (String) httpSession.getAttribute("userId");
 String password = (String) httpSession.getAttribute("password");
 String address = (String) httpSession.getAttribute("address");
-String phoneNumber = (String) httpSession.getAttribute("phoneNumber");
+String phonenumber = (String) httpSession.getAttribute("phone");
 %>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -75,7 +75,7 @@ String phoneNumber = (String) httpSession.getAttribute("phoneNumber");
                         <% if (session.getAttribute("userId") != null) { %>
                             <a href="mypage.jsp"><span class="arrow_right_alt"></span> Logout</a>
                         <% } else { %>
-                             <a href="./join.jsp"><span class="arrow_right_alt"></span> join</a>            
+                             <a href="./join.jsp"><span class="arrow_right_alt"></span> Join</a>            
                         <a href="./login.jsp"><span class="icon_profile"></span> Login</a>
                         <% } %>
                     </div>
@@ -113,16 +113,16 @@ String phoneNumber = (String) httpSession.getAttribute("phoneNumber");
                             <span class="icon_mail"></span>
                         </div>
                         <div class="input__item">
-                            <input type="text" class="form-control" placeholder="Password" value="Password : &nbsp;<%= session.getAttribute("userId") != null ? session.getAttribute("userId") : "" %>" readonly />
-                            <span class="icon_mail"></span>
+                            <input type="text" class="form-control" placeholder="Password" value="Password : &nbsp;<%= session.getAttribute("password") != null ? session.getAttribute("password") : "" %>" readonly />
+                            <span class="icon_lock"></span>
                         </div>
                         <div class="input__item">
-                           <input type="text" class="form-control" placeholder="address" value="address : &nbsp;<%= session.getAttribute("userId") != null ? session.getAttribute("userId") : "" %>" readonly />
-                           <span class="icon_mail"></span>
+                           <input type="text" class="form-control" placeholder="address" value="address : &nbsp;<%= session.getAttribute("address") != null ? session.getAttribute("address") : "" %>" readonly />
+                           <span class="icon_tags"></span>
                        </div>
                         <div class="input__item">
-                           <input type="text" class="form-control" placeholder="Phone number" value="Phone number : &nbsp;<%= session.getAttribute("userId") != null ? session.getAttribute("userId") : "" %>" readonly />
-                           <span class="icon_mail"></span>
+                           <input type="text" class="form-control" placeholder="Phone number" value="Phone number : &nbsp;<%= session.getAttribute("phone") != null ? session.getAttribute("phone") : "" %>" readonly />
+                           <span class="icon_phone"></span>
                        </div>
                         <button type="submit" class="site-btn">Login Now</button>
                     </form>
