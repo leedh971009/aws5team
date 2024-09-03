@@ -118,7 +118,7 @@
                     <% if (session.getAttribute("userId") != null) { %>
                         <a href="mypage.jsp"><span class="arrow_right_alt"></span> Logout</a>
                     <% } else { %>
-                         <a href="./join.jsp"><span class="arrow_right_alt"></span> join</a>            
+                         <a href="./join.jsp"><span class="arrow_right_alt"></span> Join</a>            
                     <a href="./login.jsp"><span class="icon_profile"></span> Login</a>
                     <% } %>
                 </div>
@@ -162,11 +162,11 @@
                         </div>
                         <div class="input__item">
                             <input type="text" placeholder="address" name="address">
-                            <span class="icon_lock"></span>
+                            <span class="icon_tags"></span>
                         </div>
                         <div class="input__item">
                             <input type="text" placeholder="Phone number" name="phone">
-                            <span class="icon_lock"></span>
+                            <span class="icon_phone"></span>
                         </div>
 
                         <button type="submit" class="site-btn">Login Now</button>
