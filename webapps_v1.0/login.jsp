@@ -128,7 +128,7 @@
                         <% if (session.getAttribute("userId") != null) { %>
                             <a href="mypage.jsp"><span class="arrow_right_alt"></span> Logout</a>
                         <% } else { %>
-                             <a href="./join.jsp"><span class="arrow_right_alt"></span> join</a>            
+                             <a href="./join.jsp"><span class="arrow_right_alt"></span> Join</a>            
                         <a href="./login.jsp"><span class="icon_profile"></span> Login</a>
                         <% } %>
                     </div>
