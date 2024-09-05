@@ -1,0 +1,20 @@
+{{- range .Values.persistentVolumes }}
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ .name }}
+  namespace: {{ .namespace }}
+spec:
+  capacity:
+    storage: {{ .capacity }}
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Recycle
+  storageClassName: {{ .storageClassName }}
+  csi:
+    driver: {{ .driver }}
+    volumeHandle: {{ .volumeHandle }}
+---
+{{- end }}
+
