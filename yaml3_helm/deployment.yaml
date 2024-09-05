@@ -1,0 +1,75 @@
+{{- range .Values.names }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-{{ .Values.name }}
+  namespace: {{ .Values.namespace }}
+  annotations:
+    kubernetes.io/change-cause: first_version
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.app }}
+      name: {{ .Values.name }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.app }}
+        name: {{ .Values.name }}
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: {{ .Values.affinity.podAntiAffinity.weight }}
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: {{ .Values.affinity.podAntiAffinity.matchExpressions[0].key }}
+                  operator: {{ .Values.affinity.podAntiAffinity.matchExpressions[0].operator }}
+                  values:
+                  - {{ .Values.affinity.podAntiAffinity.matchExpressions[0].values[0] }}
+              topologyKey: {{ .Values.affinity.podAntiAffinity.topologyKey }}
+      topologySpreadConstraints:
+        - maxSkew: {{ .Values.topologySpreadConstraints[0].maxSkew }}
+          topologyKey: {{ .Values.topologySpreadConstraints[0].topologyKey }}
+          whenUnsatisfiable: {{ .Values.topologySpreadConstraints[0].whenUnsatisfiable }}
+          labelSelector:
+            matchLabels:
+              app: {{ .Values.app }}        
+      containers:
+      - image: {{ .Values.images.[.Values.imageType].[.Values.name].repository }}:{{ .Values.images.[.Values.imageType].[.Values.name].tag }}
+        name: {{ .Values.name }}
+        ports:
+        - containerPort: {{ $.Values.containerPort }}
+        volumeMounts:
+        - mountPath: {{ $.Values.volumeMounts.mountPath }}
+          name: {{ $.Values.volumeMounts.name }}
+        resources:
+          limits:
+            cpu: {{ .Values.resources.limits.cpu }}
+            memory: {{ .Values.resources.limits.memory }}
+          requests:
+            cpu: {{ .Values.resources.requests.cpu }}
+            memory: {{ .Values.resources.requests.memory }}
+        livenessProbe:
+          httpGet:
+            path: {{ .Values.livenessProbe.path }}
+            port: {{ .Values.livenessProbe.port }}
+          initialDelaySeconds: {{ .Values.probeSettings.initialDelaySeconds }}
+          periodSeconds: {{ .Values.probeSettings.periodSeconds }}
+          timeoutSeconds: {{ .Values.probeSettings.timeoutSeconds }}
+          successThreshold: {{ .Values.probeSettings.successThreshold }}
+          failureThreshold: {{ .Values.probeSettings.failureThreshold }}
+        imagePullPolicy: {{ .Values.images.pullPolicy }}
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: {{ .Values.pvcName }}
+{{- end }}

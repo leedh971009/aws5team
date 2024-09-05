@@ -1,0 +1,23 @@
+{{- range $namespace, $services := .Values.services }}
+{{- range $service := $services }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ $service.name }}
+  namespace: {{ $namespace }}
+spec:
+  type: {{ $service.type }}
+  clusterIP: {{ $service.clusterIP }}
+  selector:
+    {{- toYaml $service.selector | nindent 4 }}
+  ports:
+    - protocol: TCP
+      port: {{ $service.port }}
+      targetPort: {{ $service.targetPort }}
+      {{- if eq $service.type "NodePort" }}
+      nodePort: {{ $service.nodePort }}
+      {{- end }}
+{{- end }}
+{{- end }}
+
