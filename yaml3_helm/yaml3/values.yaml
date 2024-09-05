@@ -93,6 +93,9 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: yaml3
 
+service:
+  port: 80
+
 podAnnotations: {}
 podLabels: {}
 
