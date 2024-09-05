@@ -42,7 +42,7 @@ spec:
             matchLabels:
               app: nginx
       containers:
-      - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-index:v6.0
+      - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-index:v1.0
         name: index
         ports:
         - containerPort: 80
@@ -111,7 +111,7 @@ spec:
             matchLabels:
               app: nginx
       containers:
-      - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-login:v6.0
+      - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-login:v1.0
         name: login
         ports:
         - containerPort: 80
@@ -180,7 +180,7 @@ spec:
             matchLabels:
               app: nginx
       containers:
-      - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-join:v6.0
+      - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-join:v1.0
         name: join
         ports:
         - containerPort: 80
@@ -249,7 +249,7 @@ spec:
             matchLabels:
               app: nginx
       containers:
-      - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-contents:v6.0
+      - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-contents:v1.0
         name: contents
         ports:
         - containerPort: 80
@@ -318,7 +318,7 @@ spec:
             matchLabels:
               app: nginx
       containers:
-      - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-mypage:v6.0
+      - image: 992382512430.dkr.ecr.ap-northeast-2.amazonaws.com/nginx-mypage:v1.0
         name: mypage
         ports:
         - containerPort: 80
