@@ -1,0 +1,78 @@
+{{- $deployments := .Values.deployments }}
+{{- $images := .Values.images }}
+{{- $replicaCount := .Values.replicaCount }}
+{{- range $type, $services := $deployments }}
+  {{- range $service := $services }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-{{ $type }}-{{ $service.name }}
+  namespace: default
+  annotations:
+    kubernetes.io/change-cause: first_version
+spec:
+  replicas: {{ $replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ $type }}
+      name: {{ $service.name }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  template:
+    metadata:
+      labels:
+        app: {{ $type }}
+        name: {{ $service.name }}
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 50
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: nginx
+                  operator: In
+                  values:
+                  - nginx
+              topologyKey: topology.kubernetes.io/zone
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels:
+              app: {{ $type }}
+      containers:
+      - image: {{ index (index $images $type) $service.name "repository" }}:{{ index (index $images $type) $service.name "tag" }}
+        name: {{ $service.name }}
+        ports:
+        - containerPort: {{ $service.containerPort }}
+        volumeMounts:
+        - mountPath: {{ $service.volumePath }}
+          name: html
+        resources:
+          limits:
+            cpu: 200m
+            memory: 250Mi
+          requests:
+            cpu: 200m
+            memory: 250Mi
+        livenessProbe:
+          httpGet:
+            path: /
+            port: {{ $service.containerPort }}
+          initialDelaySeconds: 15
+          periodSeconds: 20
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: {{ $service.pvcName }}
+  {{- end }}
+{{- end }}
